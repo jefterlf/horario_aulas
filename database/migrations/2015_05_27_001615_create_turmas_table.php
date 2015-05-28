@@ -14,9 +14,11 @@ class CreateTurmasTable extends Migration {
 	{
 		Schema::create('turmas', function(Blueprint $table)
 		{
-			$table->increments('id_Turma');
-			$table->foreign('Bimestre_id_bimeste')->references('id_bimestre')->on('Bimestre');
+			$table->increments('id_turma');
             $table->string('serie',100);
+            $table->integer('id_bimestre')->unsigned();
+
+            $table->foreign('id_bimestre')->references('id_bimestre')->on('bimestres');
 		});
 	}
 

@@ -14,7 +14,7 @@ class CreateBimestresTable extends Migration {
 	{
 		Schema::create('bimestres', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->increments('id_bimestre');
             $table->string('bimestre', 10);
             $table->date('data_inicio');
             $table->date('data_final');
