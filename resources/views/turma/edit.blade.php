@@ -1,0 +1,1 @@
+<?php echo Form::model($turma, array('tormas_route' => array('turma.edit', $turma->id_turma))) ?>

@@ -18,6 +18,7 @@ class CreateBimestresTable extends Migration {
             $table->string('bimestre', 10);
             $table->date('data_inicio');
             $table->date('data_final');
+		    $table->timestamps();
 		});
 	}
 

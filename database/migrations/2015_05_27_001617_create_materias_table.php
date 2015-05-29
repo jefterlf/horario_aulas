@@ -20,6 +20,7 @@ class CreateMateriasTable extends Migration {
 			$table->integer('horario')->unsigned()->index();
 
 			$table->integer('id_Professor')->unsigned()->index();
+			$table->timestamps();
 
 
 
