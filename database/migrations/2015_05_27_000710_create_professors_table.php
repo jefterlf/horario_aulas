@@ -19,6 +19,7 @@ class CreateProfessorsTable extends Migration {
             $table->date('data_demissao');
             $table->date('data_admissao');
             $table->string('tipo',255);
+		    $table->timestamps();
 		});
 	}
 
