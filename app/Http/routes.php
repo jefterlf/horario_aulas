@@ -20,4 +20,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('turmas_route','TurmasController');
+Route::resource('turmas_r','TurmasController');
