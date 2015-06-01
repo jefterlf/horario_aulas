@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3e45209209c1ac22852c3223653a4369",
+    "hash": "508db54ef316d8cd2011c74e3ecc64e9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -221,6 +221,62 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "intervention/image",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
+                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2015-05-09 16:06:30"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1792,6 +1848,54 @@
                 "environment"
             ],
             "time": "2015-05-30 15:59:26"
+        },
+        {
+            "name": "zofe/burp",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zofe/burp.git",
+                "reference": "f69d1cb1ee498c02f83baa99ccefd379bd1a4325"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zofe/burp/zipball/f69d1cb1ee498c02f83baa99ccefd379bd1a4325",
+                "reference": "f69d1cb1ee498c02f83baa99ccefd379bd1a4325",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zofe\\Burp\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Felice Ostuni",
+                    "email": "felice.ostuni@gmail.com"
+                }
+            ],
+            "description": "Simple PHP router that works with query-string and uri-segments",
+            "homepage": "https://github.com/zofe/burp",
+            "keywords": [
+                "Simple",
+                "filter",
+                "front controller",
+                "php",
+                "router"
+            ],
+            "time": "2015-03-09 22:51:58"
         }
     ],
     "packages-dev": [
@@ -1848,6 +1952,96 @@
                 "instantiate"
             ],
             "time": "2014-10-13 12:58:55"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
+        },
+        {
+            "name": "kyslik/column-sortable",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kyslik/column-sortable.git",
+                "reference": "9a3fdc3233f0d600e363d2e5668aa8cc013d66ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/9a3fdc3233f0d600e363d2e5668aa8cc013d66ee",
+                "reference": "9a3fdc3233f0d600e363d2e5668aa8cc013d66ee",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kyslik\\ColumnSortable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Kiesel",
+                    "email": "martinkiesel@gmail.com"
+                }
+            ],
+            "description": "Package for handling column sorting in Laravel 5.",
+            "keywords": [
+                "column",
+                "laravel",
+                "laravel5",
+                "sortable",
+                "sorting"
+            ],
+            "time": "2015-06-01 09:10:40"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -2072,16 +2266,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "60991776b3994cd8297b861e8ddc7f9c9500dedc"
+                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/60991776b3994cd8297b861e8ddc7f9c9500dedc",
-                "reference": "60991776b3994cd8297b861e8ddc7f9c9500dedc",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
                 "shasum": ""
             },
             "require": {
@@ -2130,7 +2324,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-31 03:14:06"
+            "time": "2015-06-01 07:35:26"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2862,6 +3056,57 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-05-02 15:21:08"
+        },
+        {
+            "name": "zofe/rapyd",
+            "version": "2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zofe/rapyd-laravel.git",
+                "reference": "fd3e3038ff624e98c0251d8e18ba1ca86101038a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zofe/rapyd-laravel/zipball/fd3e3038ff624e98c0251d8e18ba1ca86101038a",
+                "reference": "fd3e3038ff624e98c0251d8e18ba1ca86101038a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/html": "~5.0",
+                "illuminate/support": "~5.0",
+                "intervention/image": "2.*",
+                "php": ">=5.4.0",
+                "zofe/burp": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "migrations"
+                ],
+                "psr-4": {
+                    "Zofe\\Rapyd\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "zofe",
+                    "email": "felice.ostuni@gmail.com"
+                }
+            ],
+            "description": "crud widgets for laravel, to make an admin in few lines of code",
+            "homepage": "https://github.com/zofe/rapyd-laravel",
+            "keywords": [
+                "Rapyd",
+                "admin",
+                "administrator",
+                "backend",
+                "crud",
+                "datatable",
+                "form",
+                "laravel"
+            ],
+            "time": "2015-05-23 04:20:40"
         }
     ],
     "aliases": [],

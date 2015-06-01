@@ -1,21 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <title>Lista de Turmas</title>
-</head>
-<body>
-  <ul>
-  <?php foreach ($turmas as $turma): ?>
-    <li>
-        Id: <?php echo $turma->id_turma ?>
-        <br/>
-        Serie: <?php echo $turma->serie ?>
-        <br/>
-        Bimestre: <?php echo $turma->bimestre->bimestre ?>
-    </li>
-  <?php endforeach ?>
-  </ul>
-  <a href="{!!URL::route('turmas_r.create')!!}">Cadastro</a>
-</body>
-</html>
+
+@extends('app')
+@section('content')
+
+<div class="container-fluid">
+    <div class="row">
+    
+<div class="form-group">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel text-right">
+     <a class="btn btn-success" href="{!!URL::route('turmas_r.create')!!}">Cadastrar Novo +</a>
+         </div>
+  </div>
+</div>
+</div>
+  <div class="row">
+    
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        
+        <div class="panel-heading">Turmas</div>
+        <div class="panel-body">
+  
+  
+  
+  
+  
+
+   {!! $filter !!}  
+   {!! $grid !!}
+
+
+ 
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+@endsection
+
+

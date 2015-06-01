@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Collective\Html\HtmlServiceProvider',
+		'Zofe\Rapyd\RapydServiceProvider',
+
 
 		/*
 		 * Application Service Providers...
