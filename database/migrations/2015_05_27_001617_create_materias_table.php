@@ -16,10 +16,10 @@ class CreateMateriasTable extends Migration {
 		{
 
 			$table->increments('id_materia');
-						$table->integer('dia_semana')->unsigned()->index();
+            $table->integer('dia_semana')->unsigned()->index();
 			$table->integer('horario')->unsigned()->index();
 
-			$table->integer('id_Professor')->unsigned()->index();
+			$table->integer('id_professor')->unsigned()->index();
 
 
 

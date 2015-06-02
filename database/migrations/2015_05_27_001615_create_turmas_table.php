@@ -19,6 +19,7 @@ class CreateTurmasTable extends Migration {
             $table->integer('id_bimestre')->unsigned();
 
             $table->foreign('id_bimestre')->references('id_bimestre')->on('bimestres');
+			$table->timestamps();
 		});
 	}
 
