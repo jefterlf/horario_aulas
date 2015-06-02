@@ -12,10 +12,10 @@
         <br/>
         Serie: <?php echo $turma->serie ?>
         <br/>
-        Bimestre: <?php echo $turma->bimestre ?>
+        Bimestre: <?php echo $turma->bimestre->bimestre ?>
     </li>
   <?php endforeach ?>
   </ul>
-  <a href="{!!URL::route('turmas_route.create')!!}">Cadastro</a>
+  <a href="{!!URL::route('turmas_r.create')!!}">Cadastro</a>
 </body>
 </html>

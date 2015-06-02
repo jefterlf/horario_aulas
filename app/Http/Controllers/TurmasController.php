@@ -40,7 +40,7 @@ class TurmasController extends Controller {
 	public function store()
 	{
 		$turma = Turma::create(Input::all());
-		return Redirect::route('turmas_route.index');
+		return Redirect::route('turmas_r.index');
 	}
 
 	/**
