@@ -23,10 +23,24 @@
   
   
   
-  
-  
+  <table>
+      <?php
+                foreach($turmas as $turma){
+       ?>
+                   <tr>
+                    <td>
+                       <?php echo $turma->serie; ?>
+                    </td>
+                       <td>
+                           <?php echo $turma->bimestre->bimestre; ?>
+                       </td>
+                    </tr>
+      <?php
+                }
+            ?>
 
 
+  </table>
 
  
       </div>

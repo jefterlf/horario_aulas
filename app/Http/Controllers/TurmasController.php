@@ -19,7 +19,7 @@ class TurmasController extends Controller {
 	{
 		
 		
-		$turmas = Turma::get();
+		$turmas = Turma::all();
 
 
 
