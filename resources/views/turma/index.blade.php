@@ -23,7 +23,14 @@
   
   
   
-  <table>
+  <table id="tbTurmas">
+     <thead>         
+            <tr>
+                <th>Série</th>
+                <th>Bimestre</th>
+            </tr>
+     </thead>
+     <tbody>
       <?php
                 foreach($turmas as $turma){
        ?>
@@ -35,6 +42,7 @@
                            <?php echo $turma->bimestre->bimestre; ?>
                        </td>
                     </tr>
+     </tbody>
       <?php
                 }
             ?>
@@ -50,6 +58,12 @@
 </div>
   </div>
 </div>
-@endsection
 
+<script>
+  $(document).ready(function(){
+      $('#tbTurmas').DataTable();
+  });
+</script>
+
+@endsection
 
