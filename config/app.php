@@ -135,8 +135,7 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Collective\Html\HtmlServiceProvider',
-		'Zofe\Rapyd\RapydServiceProvider',
+
 
 
 		/*
@@ -147,6 +146,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+		'Collective\Html\HtmlServiceProvider',
 
 	],
 
@@ -197,6 +197,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form' => 'Collective\Html\FormFacade',
       	'Html' => 'Collective\Html\HtmlFacade',
+      	
 
 	],
 

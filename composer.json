@@ -7,8 +7,7 @@
 	"require": {
 		"laravel/framework": "5.0.*",
 		 "laravelcollective/html": "~5.0",
-		"intervention/image": "^2.2",
-		 "zofe/burp": "2.*"
+		 "laravelcollective/html": "~5.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
