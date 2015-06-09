@@ -21,3 +21,5 @@ Route::controllers([
 ]);
 
 Route::resource('turmas_r','TurmasController');
+
+Route::resource('horarios_r','HorariosController');

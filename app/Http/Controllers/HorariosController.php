@@ -3,12 +3,11 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Horario;
 use App\Turma;
-use App\Bimestre;
 use Input, Redirect,Response;
 
-
-class TurmasController extends Controller {
+class HorariosController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,10 +16,8 @@ class TurmasController extends Controller {
 	 */
 	public function index()
 	{
-		
-		
-		$turmas = Turma::all();
-		return view('turma.index',compact('turmas'));
+		$horarios = Horario::all();
+		return view('horario.index',compact('horarios'));
 	}
 
 	/**
@@ -30,9 +27,8 @@ class TurmasController extends Controller {
 	 */
 	public function create()
 	{
-		
-		$bimestres = Bimestre::lists('bimestre', 'id_bimestre');
-		return view('turma.create', compact('bimestres'));
+		$turmas = Turma::lists('serie', 'id_turma');
+		return view('horario.create', compact('turmas'));
 	}
 
 	/**
@@ -42,8 +38,9 @@ class TurmasController extends Controller {
 	 */
 	public function store()
 	{
-		$turma = Turma::create(Input::all());
-		return Redirect::route('turmas_r.index');
+		$horario = Horario::create(Input::all());
+		return Redirect::route('horarios_r.index');
+
 	}
 
 	/**
@@ -65,7 +62,7 @@ class TurmasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -76,7 +73,7 @@ class TurmasController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -87,7 +84,7 @@ class TurmasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		
 	}
 
 }
