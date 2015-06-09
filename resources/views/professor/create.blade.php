@@ -21,8 +21,8 @@
                     <label class="col-md-4 control-label"  for="tipo">Tipo:</label>
                     <div class="col-md-6">
 
-                     <select id="tipo" name="tipo"><option value="contratado">Contratado</option>
-                         <option value="efetivo">Efetivo</option></select>
+                     <select id="tipo" name="tipo"><option value="Contratado">Contratado</option>
+                         <option value="Efetivo">Efetivo</option></select>
 
 
                     </div>

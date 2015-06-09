@@ -49,6 +49,9 @@
                        <td>
                            <?php echo $professor->data_demissao; ?>
                        </td>
+
+                  
+
                     </tr>
      </tbody>
       <?php

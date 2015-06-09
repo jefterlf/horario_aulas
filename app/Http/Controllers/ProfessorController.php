@@ -59,31 +59,48 @@ class ProfessorController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		//
-	}
+    public function edit($id)
+    {
+        // get the nerd
+        $professores = Professor::find($id);
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+        // show the edit form and pass the nerd
+        return View('professors_r.edit')->with('professor', $professores);
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+
+
+            Session::flash('message', 'Professor atualizado com sucesso!');
+            return Redirect::to('professors_r');
+        }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        // delete
+        $professores = Professor::find($id);
+        $professores->delete();
+
+        // redirect
+        Session::flash('message', 'Professor deletado com sucesso!');
+        return Redirect::to('professors_r');
+    }
 
 }
+
+
+
