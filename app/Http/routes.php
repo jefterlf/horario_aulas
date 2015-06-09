@@ -21,3 +21,4 @@ Route::controllers([
 ]);
 
 Route::resource('turmas_r','TurmasController');
+Route::resource('professors_r','ProfessorController');
