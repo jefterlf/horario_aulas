@@ -21,3 +21,6 @@ Route::controllers([
 ]);
 
 Route::resource('turmas_r','TurmasController');
+
+
+Route::resource('materias_r','MateriasController');
