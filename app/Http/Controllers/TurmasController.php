@@ -65,7 +65,11 @@ class TurmasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		//$turma = Turma::find($id);
+
+		
+		//return View('turma.edit')->with('turma', $turma);
+		return View('turma.edit');
 	}
 
 	/**
