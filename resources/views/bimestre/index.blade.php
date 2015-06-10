@@ -8,31 +8,31 @@
       <div class="col-md-8 col-md-offset-2">
           <div class="panel text-right">
        <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Cadastrar Bimestre +</a>
-           </div>
+      </div>
     </div>
   </div>
   </div>
-    <div class="row">
 
+    <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
 
-          <div class="panel-heading">Bimestres</div>
+          <div class="panel-heading">BIMESTRES</div>
           <div class="panel-body">
 
 
-
-    <table id="tbBimestre" class="table table-striped table-bordered">
+       <table id="tbBimestre">
        <thead>
               <tr>
                   <th>Bimestre</th>
                   <th>Data Início</th>
                   <th>Data Final</th>
+                  <th>Ações</th>
               </tr>
        </thead>
        <tbody>
         <?php
-                  foreach($bimestres as $bimestre){
+                  foreach($bimestres as $bimestre) {
          ?>
                      <tr>
                       <td>
@@ -44,32 +44,34 @@
                       <td>
                         <?php echo $bimestre->data_final; ?>
                       </td>
-
-                      <td>  <a class="btn btn-primary" href="{!!URL::route('bimestres_r.edit')!!}">Editar</a>
-                        
-                       </td>
-                      </tr>
+                      <td>
+                        <a class="btn btn-primary" href="{!!URL::route('bimestres_r.edit')!!}">Editar</a> 
+                        <a class="btn btn-danger" href="{!!URL::route('bimestres_r.destroy')!!}">Apagar</a>
+                      </td>  
+                     </tr>
+                     
 
         <?php
-                  }
-              ?> </tbody>
+            }
+        ?> 
+        </tbody>
 
 
     </table>
-
-
-        </div>
-        </div>
-      </div>
     </div>
-  </div>
     </div>
-  </div>
+    </div>
+    </div>
+    </div>
 
   <script>
-    $(document).ready(function(){
-        $('#tbBimestre').DataTable();
-    });
-  </script>
+  $(document).ready(function(){
 
+    $('#tbBimestre').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
+  });
+  </script>
   @endsection

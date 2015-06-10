@@ -60,7 +60,11 @@ class BimestreController extends Controller {
 	 */
 	public function edit($id)
 	{
-		
+		// get the nerd
+		$bimestres = Bimestre::find($id);
+
+		// show the edit form and pass the nerd
+        return View('bimestres_r.edit')->with('bimestre', $bimestres);
     }
 
 	/**
@@ -82,6 +86,13 @@ class BimestreController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		// delete
+        $bimestres = Bimestres::find($id);
+        $bimestres->delete();
+
+        // redirect
+        Session::flash('message', 'Bimestre deletado com sucesso!');
+        return Redirect::to('bimestres_r');
 		
 	}
 
