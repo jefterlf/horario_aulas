@@ -41,11 +41,17 @@
                        <td>
                            <?php echo $turma->bimestre->bimestre; ?>
                        </td>
+                       <td>  <a class="btn btn-primary" href="{!!URL::route('turmas_r.edit')!!}">Editar</a>
+                           <a class="btn btn-danger" href="{!!URL::route('turmas_r.destroy')!!}">Apagar</a>
+                       </td>
                     </tr>
-     </tbody>
+
       <?php
                 }
             ?>
+
+
+     </tbody>
 
 
   </table>
