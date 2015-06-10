@@ -44,6 +44,7 @@
                     <li><a href="{!!URL::route('turmas_r.index')!!}">Turmas</a></li>
                     <li><a href="{!!URL::route('horarios_r.index')!!}">Horários</a></li>
                     <li><a href="{!!URL::route('professors_r.index')!!}">Professores</a></li>
+                    <li><a href="{!!URL::route('bimestres_r.index')!!}">Bimestres</a></li>
 
 				</ul>
 
