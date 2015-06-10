@@ -25,32 +25,35 @@
   <table id="tbMaterias">
      <thead>         
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <th>Dia da semana</th>
-                   <th>Horario</th>
-                      <th>ID professor</th>
+                <th>Horario</th>
+                <th>ID professor</th>
             </tr>
      </thead>
      <tbody>
       
-                @foreach($materias as $materia){
+                @foreach($materias as $materia)
        
-                   <tr>
+                  <tr>
                     <td>
-                        {{$materia->id_materia; }}
+                        {{$materia->id_materia}}
                     </td>
-                       <td>
-                           {{$materia->horario->dia_semana;}}
-                           <td>
-                           {{$materia->horario->horario;}}
-                       </td>
 
-                       <td>
-                           {{$materia->professor->id_professor;}}
-                       </td>
+                    <td>
+                        {{$materia->horario->dia_semana}}
+                    </td>
 
-                    </tr>
-                    @endforeach
+                    <td>
+                        {{$materia->horario->horario}}
+                    </td>
+
+                    <td>
+                        {{$materia->professor->id_professor}}
+                    </td>
+                  </tr>
+
+                @endforeach
      </tbody>
       
                 

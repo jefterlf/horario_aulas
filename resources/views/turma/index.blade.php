@@ -38,10 +38,10 @@
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
-                       <td>
-                           <?php echo $turma->bimestre->bimestre; ?>
-                       </td>
-                    </tr>
+                    <td>
+                        <?php echo $turma->bimestre->bimestre; ?>
+                    </td>
+                   </tr>
      </tbody>
       <?php
                 }
