@@ -45,15 +45,23 @@
                            <a class="btn btn-danger" href="{!!URL::route('turmas_r.destroy')!!}">Apagar</a>
                        </td>
                     </tr>
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> origin/master
       <?php
                 }
             ?>
 
+<<<<<<< HEAD
 
      </tbody>
 
 
+=======
+  </tbody>
+>>>>>>> origin/master
   </table>
 
  
