@@ -18,7 +18,7 @@ class MateriasController extends Controller {
 	public function index()
 	{
 		$materias = Materia::all();
-
+//teste
 		return view('materia.index',compact('materias'));
 	}
 
