@@ -12,12 +12,13 @@
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<!-- CSS -->
-	<link href="../resources/DataTables/css/jquery.dataTables.min.css" rel="stylesheet">
 
+	<link href="../resources/DataTables/css/dataTables.bootstrap.css" rel="stylesheet">
 	<!-- Scripts -->
 	<script src="../resources/jquery/jquery.min.js"></script>
 	<script src="../resources/bootstrap/bootstrap.min.js"></script>
 	<script src="../resources/DataTables/js/jquery.dataTables.min.js"></script>
+	<script src="../resources/DataTables/js/dataTables.bootstrap.js"></script>
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
