@@ -2,13 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Professor;
+use Input, Redirect, Reponse;
+
 use Illuminate\Http\Request;
-use App\Turma;
-use App\Bimestre;
-use Input, Redirect,Response;
 
-
-class TurmasController extends Controller {
+class ProfessorController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,10 +16,8 @@ class TurmasController extends Controller {
 	 */
 	public function index()
 	{
-		
-		
-		$turmas = Turma::all();
-		return view('turma.index',compact('turmas'));
+		$professores = Professor::all();
+        return view('professor.index', compact('professores'));
 	}
 
 	/**
@@ -30,9 +27,8 @@ class TurmasController extends Controller {
 	 */
 	public function create()
 	{
-		
-		$bimestres = Bimestre::lists('bimestre', 'id_bimestre');
-		return view('turma.create', compact('bimestres'));
+		$professores = Professor::lists('nome', 'tipo', 'data_admissao', 'data_demissao');
+        return view('professor.create', compact('professores'));
 	}
 
 	/**
@@ -42,8 +38,8 @@ class TurmasController extends Controller {
 	 */
 	public function store()
 	{
-		$turma = Turma::create(Input::all());
-		return Redirect::route('turmas_r.index');
+		$professores = Professor::create(Input::all());
+        return Redirect::route('professors_r.index');
 	}
 
 	/**
