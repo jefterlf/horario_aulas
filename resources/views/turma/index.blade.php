@@ -23,29 +23,40 @@
   
   
   
-  <table id="tbTurmas">
+  <table id="tbTurmas" class="table table-striped table-bordered cellspacing="0" width="100%">
      <thead>         
             <tr>
                 <th>Série</th>
                 <th>Bimestre</th>
+                   <th></th>
             </tr>
      </thead>
      <tbody>
-      <?php
-                foreach($turmas as $turma){
-       ?>
+      <?php foreach($turmas as $turma){ ?>
                    <tr>
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
+<<<<<<< HEAD
                     <td>
                         <?php echo $turma->bimestre->bimestre; ?>
                     </td>
                    </tr>
+=======
+                       <td>
+                           <?php echo $turma->bimestre->bimestre; ?>
+                       </td>
+                       <td> 
+
+                          <a class="btn btn-primary" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
+
+                       </td>
+                    </tr>
+      <?php } ?>
+
+
+>>>>>>> origin/master
      </tbody>
-      <?php
-                }
-            ?>
 
 
   </table>
@@ -55,13 +66,15 @@
       </div>
     </div>
   </div>
-</div>
-  </div>
-</div>
 
 <script>
   $(document).ready(function(){
-      $('#tbTurmas').DataTable();
+
+    $('#tbTurmas').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
   });
 </script>
 

@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Turma extends Model {
 
 		 protected $fillable = ['serie','id_bimestre'];
-		 protected $guarded = ['id_turma'];
-
+		
+		protected $primaryKey = "id_turma";
 
 		 
 		 public function bimestre(){

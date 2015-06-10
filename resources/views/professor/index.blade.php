@@ -30,6 +30,7 @@
                 <th>Tipo</th>
                 <th>Data Admissão</th>
                 <th>Data Demissão</th>
+                <th>Ações</th>
             </tr>
      </thead>
      <tbody>
@@ -50,13 +51,14 @@
                            <?php echo $professor->data_demissao; ?>
                        </td>
 
-                  
-
+                     <td>  <a class="btn btn-primary" href="{!!URL::route('professors_r.edit')!!}">Editar</a>
+                       <a class="btn btn-danger" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
+                     </td>
                     </tr>
-     </tbody>
+
       <?php
                 }
-            ?>
+            ?> </tbody>
 
 
   </table>

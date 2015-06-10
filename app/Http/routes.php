@@ -21,6 +21,7 @@ Route::controllers([
 ]);
 
 Route::resource('turmas_r','TurmasController');
+<<<<<<< HEAD
 
 
 
@@ -30,3 +31,9 @@ Route::resource('professors_r','ProfessorController');
 Route::resource('horarios_r','HorariosController');
 
 
+=======
+Route::resource('materias_r','MateriasController');
+Route::resource('professors_r','ProfessorController');
+Route::resource('horarios_r','HorariosController');
+Route::resource('bimestres_r','BimestreController');
+>>>>>>> origin/master
