@@ -62,8 +62,16 @@
 
 <script>
   $(document).ready(function(){
-      $('#tbTurmas').DataTable();
+
+    $('#tbTurmas').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
   });
+  
+  
+
 </script>
 
 @endsection
