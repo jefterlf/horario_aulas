@@ -42,12 +42,12 @@
                            <?php echo $turma->bimestre->bimestre; ?>
                        </td>
                     </tr>
-     </tbody>
+   
       <?php
                 }
             ?>
 
-
+  </tbody>
   </table>
 
  
