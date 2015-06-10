@@ -1,1 +1,1 @@
-<?php echo Form::model($turma, array('tormas_r' => array('turma.edit', $turma->id_turma))) ?>
+<?php echo Form::model($professores, array('professors' => array('professors_r.edit', $professores->id_professor))) ?>
