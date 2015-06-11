@@ -79,7 +79,7 @@ class TurmasController extends Controller {
 	 */
 	public function update($id)
 	{
-		$turma = Turma::where('id_turma', 2)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$turma = Turma::where('id_turma', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
 		$turma->serie       = Input::get('serie');//atualiza a seria da  da turma com os valores vindos do formulário de edição
 		$turma->id_bimestre = Input::get('id_bimestre');//atualiza o bimestre  da  da turma com os valores vindos do formulário de edição
 		$turma->save();

@@ -47,6 +47,7 @@
                     <li><a href="{!!URL::route('horarios_r.index')!!}">Horários</a></li>
                     <li><a href="{!!URL::route('professors_r.index')!!}">Professores</a></li>
                     <li><a href="{!!URL::route('bimestres_r.index')!!}">Bimestres</a></li>
+                    <li><a href="{!!URL::route('materias_r.index')!!}">Matérias</a></li>
 
 				</ul>
 
