@@ -25,7 +25,7 @@
        <thead>
               <tr>
                   <th>Bimestre</th>
-                  <th>Data Início</th>
+                  <th>Data Inicial</th>
                   <th>Data Final</th>
                   <th>Ações</th>
               </tr>
