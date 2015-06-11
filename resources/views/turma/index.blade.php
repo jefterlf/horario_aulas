@@ -37,16 +37,11 @@
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
-<<<<<<< HEAD
                     <td>
                         <?php echo $turma->bimestre->bimestre; ?>
                     </td>
-                   </tr>
-=======
+              
                        <td>
-                           <?php echo $turma->bimestre->bimestre; ?>
-                       </td>
-                       <td> 
 
                           <a class="btn btn-primary" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
 
@@ -55,7 +50,7 @@
       <?php } ?>
 
 
->>>>>>> origin/master
+
      </tbody>
 
 
