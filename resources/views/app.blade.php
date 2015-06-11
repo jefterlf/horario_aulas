@@ -45,12 +45,12 @@ box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);">
 
 					@if (Auth::guest())
 					
-					<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span>  Inicio</a></li>
-                    <li><a href="{!!URL::route('turmas_r.index')!!}">Turmas</a></li>
-                    <li><a href="{!!URL::route('horarios_r.index')!!}">Horários</a></li>
-                    <li><a href="{!!URL::route('professors_r.index')!!}">Professores</a></li>
-                    <li><a href="{!!URL::route('bimestres_r.index')!!}">Bimestres</a></li>
-                    <li><a href="{!!URL::route('materias_r.index')!!}">Matérias</a></li>
+					<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                    <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>
+                    <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>
+                    <li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
+                    <li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
+                    <li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>
 					
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
@@ -59,7 +59,7 @@ box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);">
 						<li class='has-sub'>
 							<a href="#">{{ Auth::user()->name }} </a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ url('/auth/logout') }}">Sair</a></li>
+								<li><a href="{{ url('/auth/logout') }}"><span class="glyphicon glyphicon-off"> Sair</a></li>
 							</ul>
 						</li>
 		 
