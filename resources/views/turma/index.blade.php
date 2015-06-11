@@ -23,7 +23,7 @@
   
   
   
-  <table id="tbTurmas" class="table table-striped table-bordered cellspacing="0" width="100%">
+  <table id="tbTurmas" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
                 <th>Série</th>
@@ -37,15 +37,10 @@
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
-<<<<<<< HEAD
+
                     <td>
-                        <?php echo $turma->bimestre->bimestre; ?>
+                       <?php echo $turma->bimestre->bimestre; ?>
                     </td>
-                   </tr>
-=======
-                       <td>
-                           <?php echo $turma->bimestre->bimestre; ?>
-                       </td>
                        <td> 
 
                           <a class="btn btn-primary" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
@@ -55,7 +50,6 @@
       <?php } ?>
 
 
->>>>>>> origin/master
      </tbody>
 
 

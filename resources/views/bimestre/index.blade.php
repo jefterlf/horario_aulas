@@ -21,7 +21,7 @@
           <div class="panel-body">
 
 
-       <table id="tbBimestre">
+       <table id="tbBimestre" class="table table-striped table-bordered cellspacing" width="100%">
        <thead>
               <tr>
                   <th>Bimestre</th>
