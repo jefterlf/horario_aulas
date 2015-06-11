@@ -27,7 +27,7 @@
                </div>
               </div>
 
-           <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+             <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
               <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                   <input type="submit" class="btn btn-primary" value="Salvar">

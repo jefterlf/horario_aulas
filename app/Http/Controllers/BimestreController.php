@@ -61,7 +61,7 @@ class BimestreController extends Controller {
 	public function edit($id)
 	{
         $bimestres = Bimestre::where('id_bimestre', $id)->firstOrFail();
-        return View('bimestre.edit')->with('bimestre', $bimestres)->with(compact('bimestre'));
+        return View('bimestre.edit')->with('bimestre', $bimestres)->with(compact('bimestres'));
 
     }
 
