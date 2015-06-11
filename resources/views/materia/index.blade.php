@@ -22,7 +22,7 @@
   
   
   
-  <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">>
+  <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
                 <th>ID</th>

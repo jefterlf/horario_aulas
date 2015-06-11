@@ -21,7 +21,7 @@
               <thead>         
                 <tr>
                   <th>Dia Semana </th>
-                  <th>Horario </th>
+                  <th>Horário </th>
                   <th>ID Turma </th>
                 </tr>
               </thead>
