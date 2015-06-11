@@ -52,7 +52,7 @@
                        </td>
                     <td>
                      <a class="btn btn-primary" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
-                       <a class="btn btn-danger" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
+                       <a class="btn btn-danger" href="{{URL::to('professors_r/'. $professor->id_professor . '/destroy')}}">Apagar</a>
                     </td>
                     </tr>
 

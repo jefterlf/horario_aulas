@@ -90,7 +90,9 @@ class ProfessorController extends Controller {
      */
     public function destroy($id)
     {
-        //
+        $professor = Professor::where('id_professor',$id);
+        $professor->delete();
+        return Redirect::route('professors_r.index');
     }
 
 }
