@@ -21,7 +21,8 @@
 	<script src="../resources/DataTables/js/jquery.dataTables.min.js"></script>
 	<script src="../resources/DataTables/js/dataTables.bootstrap.js"></script>
 
-	 <link href="{{ asset('/js/menu.js') }}" rel="stylesheet">
+	 <script src="{{ asset('/js/menu.js') }}"></script>
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -44,7 +45,7 @@ box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);">
 
 					@if (Auth::guest())
 					
-									<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span>  Inicio</a></li>
+					<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span>  Inicio</a></li>
                     <li><a href="{!!URL::route('turmas_r.index')!!}">Turmas</a></li>
                     <li><a href="{!!URL::route('horarios_r.index')!!}">Horários</a></li>
                     <li><a href="{!!URL::route('professors_r.index')!!}">Professores</a></li>
