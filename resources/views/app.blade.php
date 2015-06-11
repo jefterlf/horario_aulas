@@ -14,62 +14,98 @@
 	<!-- CSS -->
 
 	<link href="../resources/DataTables/css/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="../resources/js/styles.css" rel="stylesheet">
 	<!-- Scripts -->
 	<script src="../resources/jquery/jquery.min.js"></script>
 	<script src="../resources/bootstrap/bootstrap.min.js"></script>
 	<script src="../resources/DataTables/js/jquery.dataTables.min.js"></script>
 	<script src="../resources/DataTables/js/dataTables.bootstrap.js"></script>
-	
+	   <script src="../resources/js/script.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		
+
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Escola Amélio</a>
-			</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+<div id='cssmenu' style="-webkit-box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);
+-moz-box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);
+box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);">
+<ul>
+<span class="navbar-brand" href="#"> Escola Amélio</span>
+
+
+					@if (Auth::guest())
+					
+									<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span>  Inicio</a></li>
                     <li><a href="{!!URL::route('turmas_r.index')!!}">Turmas</a></li>
                     <li><a href="{!!URL::route('horarios_r.index')!!}">Horários</a></li>
                     <li><a href="{!!URL::route('professors_r.index')!!}">Professores</a></li>
                     <li><a href="{!!URL::route('bimestres_r.index')!!}">Bimestres</a></li>
                     <li><a href="{!!URL::route('materias_r.index')!!}">Matérias</a></li>
-
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
+					
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
+	
+						<li class='has-sub'>
+							<a href="#">{{ Auth::user()->name }} </a>
+							<ul class="dropdown-menu">
 								<li><a href="{{ url('/auth/logout') }}">Sair</a></li>
 							</ul>
 						</li>
+		 
+     
 					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
 
-	@yield('content')
+
+</ul>
+				
+			
+				
+</div>
+				
+
+
+@yield('content')
 	
 
 </body>
 </html>
+
+<script>
+$(function(){
+	 
+
+	/*
+	 
+	 $("ul li").click(function(e){
+		 e.preventDefault();
+	    $("ul li").removeClass();
+        $(this).addClass("active");
+	    $("#menu-line").css("width",$(this).css("width"));
+	 
+		 var p = $(this).position();
+		
+		  $("#menu-line").css("left",p.left);
+		  
+		 // var link = $(this).find('a').attr("href");
+		//$(this).find('a')[0].click();
+	
+		 return true;
+ 	 
+	 	});   
+		 
+		*/
+});  
+ 
+ 
+
+ </script>
+ 

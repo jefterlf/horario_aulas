@@ -8,7 +8,8 @@
         <div class="panel-heading">Cadastro de Turmas</div>
         <div class="panel-body">
 
-          {!! Form::model($turma, array('route' => array('turmas_r.update', $turma->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
+         {!! Form::model($turma, array('route' => array('turmas_r.update', $turma->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
+               
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="serie">Serie:</label>
                 <div class="col-md-6">
