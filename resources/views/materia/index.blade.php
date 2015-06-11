@@ -17,12 +17,12 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Materias</div>
+        <div class="panel-heading">MATÉRIAS</div>
         <div class="panel-body">
   
   
   
-  <table id="tbMaterias">
+  <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">>
      <thead>         
             <tr>
                 <th>ID</th>
@@ -73,8 +73,13 @@
 
 <script>
   $(document).ready(function(){
-      $('#tbMaterias').DataTable();
+
+    $('#tbMaterias').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
   });
-</script>
+  </script>
 
 @endsection

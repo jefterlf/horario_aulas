@@ -14,7 +14,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
             <div class="panel-heading">
-              HORARIOS
+              HORÁRIOS
             </div>
           <div class="panel-body">
             <table id="tbHorarios" class="table table-striped table-bordered" cellspacing="0" width="100%">
