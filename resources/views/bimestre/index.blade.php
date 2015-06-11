@@ -5,19 +5,19 @@
       <div class="row">
 
   <div class="form-group">
-      <div class="col-md-8 col-md-offset-2">
-          <div class="panel text-right">
-       <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Cadastrar Bimestre +</a>
+      <div class="col-md-10 col-md-offset-1">
+          <div class="panel text-left">
+     <h1>Bimestres  <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Novo +</a></h1>
       </div>
     </div>
   </div>
   </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
 
-          <div class="panel-heading">BIMESTRES</div>
+          <div class="panel-heading">Consulta</div>
           <div class="panel-body">
 
 

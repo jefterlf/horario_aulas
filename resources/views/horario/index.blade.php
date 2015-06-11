@@ -4,14 +4,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="form-group">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
+            <h1>Horarios   <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a> </h1>
         <div class="panel text-right">
-          <a class="btn btn-primary" href="{!!URL::route('horarios_r.create')!!}">Cadastrar Novo +</a>
+         Consulta
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
               HORÁRIOS

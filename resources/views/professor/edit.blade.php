@@ -4,8 +4,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+                  <h1>Professores  <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}"> Novo +</a></h1>
             <div class="panel panel-default">
-                <div class="panel-heading">Edição de Professor</div>
+                <div class="panel-heading">Editar</div>
                 <div class="panel-body">
 
                     {!! Form::model($professor, array('route' => array('professors_r.update', $professor->id_professor), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}

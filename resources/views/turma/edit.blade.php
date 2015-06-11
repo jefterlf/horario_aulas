@@ -3,9 +3,13 @@
 @section('content')
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+ <div class="col-md-8 col-md-offset-2">
+ <h1>Turmas   <a class="btn btn-success" href="{!!URL::route('turmas_r.create')!!}"> Novo +</a></h1>
       <div class="panel panel-default">
-        <div class="panel-heading">Cadastro de Turmas</div>
+        
+        <div class="panel-heading">Consulta</div>
+        <div class="panel-body">
+  
         <div class="panel-body">
 
          {!! Form::model($turma, array('route' => array('turmas_r.update', $turma->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
