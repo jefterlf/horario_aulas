@@ -60,7 +60,10 @@ class BimestreController extends Controller {
 	 */
 	public function edit($id)
 	{
-		
+        $bimestre = Bimestre::where('id_bimestre', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+        $bimestres = Bimestre::lists('bimestre', 'id_bimestre');//Faz a consulta para carregar o dropdowlist de bimestres
+        return View('bimestre.edit')->with('bimestre', $bimestre)->with(compact('bimestres'));//retorna $urma e $bimestres para a view
+
     }
 
 	/**
@@ -71,7 +74,11 @@ class BimestreController extends Controller {
 	 */
 	public function update($id)
 	{
-		
+        $bimestres = Bimestre::where('id_bimestre', 2)->firstOrFail();
+        $bimestres->data_inicio = Input::get('data_inicio');
+        $bimestres->data_final = Input::get('data_final');
+        $bimestres->save();
+        return Redirect::route('bimestres_r.index');
 	}
 
 	/**
@@ -82,6 +89,13 @@ class BimestreController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		// delete
+        $bimestres = Bimestres::find($id);
+        $bimestres->delete();
+
+        // redirect
+        Session::flash('message', 'Bimestre deletado com sucesso!');
+        return Redirect::to('bimestres_r');
 		
 	}
 
