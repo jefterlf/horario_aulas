@@ -28,12 +28,11 @@
             <tr>
                 <th>Série</th>
                 <th>Bimestre</th>
+                   <th></th>
             </tr>
      </thead>
      <tbody>
-      <?php
-                foreach($turmas as $turma){
-       ?>
+      <?php foreach($turmas as $turma){ ?>
                    <tr>
                     <td>
                        <?php echo $turma->serie; ?>
@@ -41,27 +40,18 @@
                        <td>
                            <?php echo $turma->bimestre->bimestre; ?>
                        </td>
-                       <td>  <a class="btn btn-primary" href="{!!URL::route('turmas_r.edit')!!}">Editar</a>
-                           <a class="btn btn-danger" href="{!!URL::route('turmas_r.destroy')!!}">Apagar</a>
+                       <td> 
+
+                          <a class="btn btn-primary" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
+
                        </td>
                     </tr>
-<<<<<<< HEAD
+      <?php } ?>
 
-=======
-   
->>>>>>> origin/master
-      <?php
-                }
-            ?>
-
-<<<<<<< HEAD
 
      </tbody>
 
 
-=======
-  </tbody>
->>>>>>> origin/master
   </table>
 
  
@@ -69,9 +59,6 @@
       </div>
     </div>
   </div>
-</div>
-  </div>
-</div>
 
 <script>
   $(document).ready(function(){
