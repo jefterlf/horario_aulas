@@ -18,17 +18,17 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Turmas</div>
+        <div class="panel-heading">TURMAS</div>
         <div class="panel-body">
   
   
   
-  <table id="tbTurmas" class="table table-striped table-bordered cellspacing="0" width="100%">
+  <table id="tbTurmas" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
                 <th>Série</th>
                 <th>Bimestre</th>
-                   <th></th>
+                <th>Ações</th>
             </tr>
      </thead>
      <tbody>
@@ -37,18 +37,17 @@
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
+
                     <td>
-                        <?php echo $turma->bimestre->bimestre; ?>
+                       <?php echo $turma->bimestre->bimestre; ?>
                     </td>
-              
-                       <td>
+                       <td> 
 
                           <a class="btn btn-primary" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
 
                        </td>
                     </tr>
       <?php } ?>
-
 
 
      </tbody>

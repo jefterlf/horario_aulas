@@ -18,7 +18,7 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Professores</div>
+        <div class="panel-heading">PROFESSORES</div>
         <div class="panel-body">
   
   
@@ -52,7 +52,7 @@
                        </td>
                     <td>
                      <a class="btn btn-primary" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
-                       <a class="btn btn-danger" href="{{URL::to('professors_r/'. $professor->id_professor . '/destroy')}}">Apagar</a>
+                       <a class="btn btn-danger" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
                     </td>
                     </tr>
 

@@ -94,7 +94,7 @@ class TurmasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-
+		//
 	}
 
 }
