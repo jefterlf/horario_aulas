@@ -23,7 +23,7 @@
   
   
   
-  <table id="tbTurmas">
+  <table id="tbTurmas" class="table table-striped table-bordered cellspacing="0" width="100%">
      <thead>         
             <tr>
                 <th>Série</th>
@@ -37,6 +37,12 @@
                     <td>
                        <?php echo $turma->serie; ?>
                     </td>
+<<<<<<< HEAD
+                    <td>
+                        <?php echo $turma->bimestre->bimestre; ?>
+                    </td>
+                   </tr>
+=======
                        <td>
                            <?php echo $turma->bimestre->bimestre; ?>
                        </td>
@@ -49,6 +55,7 @@
       <?php } ?>
 
 
+>>>>>>> origin/master
      </tbody>
 
 

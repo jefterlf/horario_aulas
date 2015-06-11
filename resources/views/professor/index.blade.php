@@ -23,7 +23,7 @@
   
   
   
-  <table id="tbProfessor">
+  <table id="conteudo" class="table table-striped table-bordered cellspacing="0" width="100%">
      <thead>         
             <tr>
                 <th>Nome</th>
@@ -50,10 +50,10 @@
                        <td>
                            <?php echo $professor->data_demissao; ?>
                        </td>
-
-                     <td>  <a class="btn btn-primary" href="{!!URL::route('professors_r.edit')!!}">Editar</a>
+                    <td>
+                     <a class="btn btn-primary" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
                        <a class="btn btn-danger" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
-                     </td>
+                    </td>
                     </tr>
 
       <?php
@@ -73,9 +73,14 @@
 </div>
 
 <script>
-  $(document).ready(function(){
-      $('#tbProfessor').DataTable();
-  });
+    $(document).ready(function(){
+
+        $('#conteudo').dataTable( {
+            "language": {
+                "url": "../resources/DataTables/Portuguese-Brasil.json"
+            }
+        } );
+    });
 </script>
 
 @endsection

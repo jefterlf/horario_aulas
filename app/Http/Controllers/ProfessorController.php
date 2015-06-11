@@ -28,7 +28,7 @@ class ProfessorController extends Controller {
 	public function create()
 	{
 		$professores = Professor::lists('nome', 'tipo', 'data_admissao', 'data_demissao');
-        return view('professor.create', compact('professores'));
+        return view('professor.create', compact('professor'));
 	}
 
 	/**
@@ -36,12 +36,11 @@ class ProfessorController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		$professores = Professor::create(Input::all());
+    public function store()
+    {
+        $professor = Professor::create(Input::all());
         return Redirect::route('professors_r.index');
-	}
-
+    }
 	/**
 	 * Display the specified resource.
 	 *
@@ -61,11 +60,9 @@ class ProfessorController extends Controller {
 	 */
     public function edit($id)
     {
-        // get the nerd
-        $professores = Professor::find($id);
+        $professor = Professor::where('id_professor', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterad
+        return View('professor.edit')->with('professors', $professor)->with(compact('professor'));//retorna $urma e $bimestres para a view
 
-        // show the edit form and pass the nerd
-        return View('professors_r.edit')->with('professor', $professores);
     }
 
     /**
@@ -76,12 +73,14 @@ class ProfessorController extends Controller {
      */
     public function update($id)
     {
-
-
-            Session::flash('message', 'Professor atualizado com sucesso!');
-            return Redirect::to('professors_r');
-        }
-
+        $professor = Professor::where('id_professor',$id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+        $professor->nome       = Input::get('nome');//atualiza a seria da  da turma com os valores vindos do formulário de edição
+        $professor->tipo = Input::get('tipo');//atualiza o bimestre  da  da turma com os valores vindos do formulário de edição
+        $professor->data_admissao = Input::get('data_admissao');
+        $professor->data_demissao = Input::get('data_demissao');
+        $professor->save();
+            return Redirect::route('professors_r.index');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -91,16 +90,7 @@ class ProfessorController extends Controller {
      */
     public function destroy($id)
     {
-        // delete
-        $professores = Professor::find($id);
-        $professores->delete();
-
-        // redirect
-        Session::flash('message', 'Professor deletado com sucesso!');
-        return Redirect::to('professors_r');
+        //
     }
 
 }
-
-
-
