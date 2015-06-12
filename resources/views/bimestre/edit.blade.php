@@ -5,25 +5,25 @@
     <div class="col-md-8 col-md-offset-2">
           <h1>Bimestres  <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Novo +</a></h1>
       <div class="panel panel-default">
-        <div class="panel-heading">Editação  </div>
+        <div class="panel-heading">Editar</div>
         <div class="panel-body">
 
-          {!! Form::model($bimestres, array('route' => array('bimestres_r.update', $bimestres->id_bimestre), 'method' => 'PUT')) !!}
+          {!! Form::model($bimestres, array('route' => array('bimestres_r.update', $bimestres->id_bimestre), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="bimestre">Bimestre:</label>
-                <div class="col-md-6">
+                <div class="col-md-3">
                    <input class="form-control" type="text" name="bimestre" value="{{ $bimestres->bimestre }}">
                 </div>
               </div>
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="data_inicio">Data Inicial:</label>
-                <div class="col-md-6">
+                <div class="col-md-3">
                    <input class="form-control" type="date" name="data_inicio" value="{{ $bimestres->data_inicio }}">
                 </div>
               </div>
               <div class="form-group">
                <label class="col-md-4 control-label"  for="data_final">Data Final:</label>
-               <div class="col-md-6">
+               <div class="col-md-3">
                    <input class="form-control" type="date" name="data_final" value="{{ $bimestres->data_final }}">
                </div>
               </div>
