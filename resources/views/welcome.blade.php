@@ -1,6 +1,8 @@
+
+@extends('app')
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>Escola Amélio</title>
 		
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -40,9 +42,22 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">Escola Amélio</div>
+				<div class="quote">Técnicos em informática turma 1</div>
+				<div class="content" >
+     			<a href="{{URL::to('/auth/login')}}" class="botao01">logar</a>
+				</div>
 			</div>
 		</div>
+		
+		<script>
+		  $(document).ready(function(){
+		    $('#tbHorarios').dataTable( {
+		        "language": {
+		            "url": "../resources/DataTables/Portuguese-Brasil.json"
+		        }
+		    } );
+		  });
+		</script>
 	</body>
 </html>

@@ -19,7 +19,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
+Route::resource('welcome_r', 'WelcomeController@index');
 Route::resource('turmas_r','TurmasController');
 Route::resource('materias_r','MateriasController');
 Route::resource('professors_r','ProfessorController');
