@@ -19,11 +19,11 @@
   </div>
 </div>
 
-<div class="container">
-  
-    <div class="content" >
-        <a href="{{URL::route('horarios_r.index')}}" class="botao01">Voltar</a>
-    </div>
+<nav>
+  <ul class="pager">
+    <li onclick="window.history.back();" ><a href="" >Voltar</a></li>
+  </ul>
+</nav>
 
 </div>
 

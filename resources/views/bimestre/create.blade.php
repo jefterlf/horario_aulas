@@ -45,5 +45,10 @@
     </div>
   </div>
 </div>
+<nav>
+  <ul class="pager">
+    <li onclick="window.history.back();" ><a href="" >Voltar</a></li>
+  </ul>
+</nav>
 </div>
 @endsection

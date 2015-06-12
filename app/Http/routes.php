@@ -25,4 +25,5 @@ Route::resource('materias_r','MateriasController');
 Route::resource('professors_r','ProfessorController');
 Route::resource('horarios_r','HorariosController');
 Route::resource('bimestres_r','BimestreController');
+Route::resource('usuarios_r','UsuariosController');
 
