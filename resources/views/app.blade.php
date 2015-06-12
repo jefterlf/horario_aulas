@@ -52,8 +52,8 @@ box-shadow: 0px 3px 5px 0px rgba(173,173,173,1);">
                     <li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
                     <li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>
 					
-						<li><a href="{{ url('/auth/login') }}">Entrar</a></li>
-						<li><a href="{{ url('/auth/register') }}">Registrar</a></li>
+						<li><a href="{{ url('/auth/login') }}">Login</a></li>
+						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 	
 						<li class='has-sub'>
