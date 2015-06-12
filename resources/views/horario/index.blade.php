@@ -5,7 +5,7 @@
   <div class="row">
     <div class="form-group">
       <div class="col-md-10 col-md-offset-1">
-            <h1>Horarios   <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a> </h1>
+            <h1>Horarios</h1>
         <div class="panel text-right">
          Consulta
         </div>
@@ -24,6 +24,7 @@
                   <th>Dia Semana </th>
                   <th>Horário </th>
                   <th>ID Turma </th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -50,6 +51,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="content" >
+     <a href="{{URL::to('/'.'welcome_r')}}" class="botao01">Voltar</a>
 </div>
  
 <script>

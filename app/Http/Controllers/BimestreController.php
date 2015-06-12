@@ -74,8 +74,9 @@ class BimestreController extends Controller {
 	public function update($id)
 	{
         $bimestres = Bimestre::where('id_bimestre',$id)->firstOrFail();
+        $bimestres->bimestre    = Input::get('bimestre');
         $bimestres->data_inicio = Input::get('data_inicio');
-        $bimestres->data_final = Input::get('data_final');
+        $bimestres->data_final  = Input::get('data_final');
         $bimestres->save();
         return Redirect::route('bimestres_r.index');
 	}
