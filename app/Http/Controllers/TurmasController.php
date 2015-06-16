@@ -15,6 +15,9 @@ class TurmasController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+	public function __construct() { $this->middleware('auth'); } //Se o usuário não estiver logado, redireciona para a página de login
+
 	public function index()
 	{
 		
@@ -54,7 +57,10 @@ class TurmasController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$turma = Turma::where('id_turma', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		$bimestres = Bimestre::lists('bimestre', 'id_bimestre');//Faz a consulta para carregar o dropdowlist de bimestres
+		return View('turma.delete')->with('turma', $turma)->with(compact('bimestres'));//retorna $urma e $bimestres para a view
+	
 	}
 
 	/**
@@ -65,11 +71,10 @@ class TurmasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//$turma = Turma::find($id);
-
-		
-		//return View('turma.edit')->with('turma', $turma);
-		return View('turma.edit');
+		$turma = Turma::where('id_turma', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		$bimestres = Bimestre::lists('bimestre', 'id_bimestre');//Faz a consulta para carregar o dropdowlist de bimestres
+		return View('turma.edit')->with('turma', $turma)->with(compact('bimestres'));//retorna $urma e $bimestres para a view
+	
 	}
 
 	/**
@@ -80,7 +85,11 @@ class TurmasController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$turma = Turma::where('id_turma', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$turma->serie       = Input::get('serie');//atualiza a seria da  da turma com os valores vindos do formulário de edição
+		$turma->id_bimestre = Input::get('id_bimestre');//atualiza o bimestre  da  da turma com os valores vindos do formulário de edição
+		$turma->save();
+		return Redirect::route('turmas_r.index');
 	}
 
 	/**
@@ -91,7 +100,10 @@ class TurmasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Turma::destroy($id);
+		return Redirect::route('turmas_r.index');
 	}
-
+public function teste($id_turma){
+return Redirect::route('turmas_r.index');	
+}
 }
