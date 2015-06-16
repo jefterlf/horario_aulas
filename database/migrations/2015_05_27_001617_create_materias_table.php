@@ -16,6 +16,7 @@ class CreateMateriasTable extends Migration {
 		{
 
 			$table->increments('id_materia');
+			$table->integer('id_horario')->unsigned();
             $table->integer('dia_semana')->unsigned()->index();
 			$table->integer('horario')->unsigned()->index();
 			$table->integer('id_professor')->unsigned()->index();
@@ -25,7 +26,7 @@ class CreateMateriasTable extends Migration {
 		});
 		 Schema::table('materias', function($table) {
 		 	
-      	 	    $table->foreign('dia_semana')->references('dia_semana')->on('horarios');
+      	 	    $table->foreign('id_horario')->references('id_horario')->on('horarios');
       	 	   // $table->foreign('horario')->references('horario')->on('horarios')->onDelete('cascade');;
       	 	    $table->foreign('id_professor')->references('id_professor')->on('professors');
 		

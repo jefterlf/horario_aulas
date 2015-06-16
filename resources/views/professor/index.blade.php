@@ -46,10 +46,13 @@
                            <?php echo $professor->tipo; ?>
                        </td>
                        <td>
-                           <?php echo $professor->data_admissao; ?>
+
+                           <?php echo date('d/m/Y', strtotime($professor->data_admissao)); //Rasgado
+
+                          ?>
                        </td>
                        <td>
-                           <?php echo $professor->data_demissao; ?>
+                           <?php echo date('d/m/Y', strtotime($professor->data_demissao)); ?>
                        </td>
                     <td>
                      <a class="btn btn-primary btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
