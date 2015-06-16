@@ -41,6 +41,7 @@
                     </td>
                     <td>
                       <a class="btn btn-primary" href="{{URL::to('horarios_r/'. $horario->id_horario . '/edit')}}">Editar</a>
+                      <a class="btn btn-danger" href="{{URL::to('horarios_r/'. $horario->id_horario . '/delete')}}">Apagar</a>
                     </td>
                   </tr>
                 <?php } ?>                 

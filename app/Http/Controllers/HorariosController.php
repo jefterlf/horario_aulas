@@ -79,7 +79,7 @@ class HorariosController extends Controller {
 		$horario->dia_semana=Input::get('dia_semana');//atualiza o dia da tabela horario com os valores vindos do formulário de edição
 		$horario->horario=Input::get('horario');//atualiza o horario da tabela horario com os valores vindos do formulário de edição
 		$horario->id_turma=Input::get('id_turma');//atualiza a turma  da tabela horario com os valores vindos do formulário de edição
-		$turma->save();
+		$horario->save();
 		return Redirect::route('horarios_r.index');
 	}
 
