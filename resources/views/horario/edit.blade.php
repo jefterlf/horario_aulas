@@ -1,9 +1,6 @@
 
 @extends('app')
 @section('content')
-
-
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -12,6 +9,41 @@
         <div class="panel-heading">Cadastro</div>
         <div class="panel-body">
 
+        	<div class="panel-body">
+
+         {!! Form::model($horario, array('route' => array('horarios_r.update', $horario->id_horario), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
+               
+              <div class="form-group">
+                <label  class="col-md-4 control-label" for="dia_semana">Dia semana:</label>
+                <div class="col-md-6">
+                   <input class="form-control" type="text" name="dia_semana" value="{{ $horario->dia_semana }}"> 
+                 </div>
+               </div>
+               <div class="form-group">
+                <label  class="col-md-4 control-label" for="horario">Horario:</label>
+                <div class="col-md-6">
+                   <input class="form-control" type="text" name="horario" value="{{ $horario->horario }}"> 
+                 </div>
+               </div>
+               <div class="form-group">
+                   <label class="col-md-4 control-label"  for="id_turma">Turma:</label>
+                 <div class="col-md-6">
+                  
+                     <?php echo Form::select('id_turma', array('0' => 'Selecione') + $turmas, $horario->id_turma, array('class' => 'form-control'));?>
+            																			
+                   
+                 </div>
+               </div>
+         
+                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                  <input type="submit" class="btn btn-primary" value="Salvar" />
+                </div>
+                </div>
+   
+  {!! Form::close() !!}
+      </div>
           
       </div>
       </div>
@@ -26,17 +58,5 @@
 </nav>
 
 </div>
-
- 
-<script>
-  $(document).ready(function(){
-    $('#tbHorarios').dataTable( {
-        "language": {
-            "url": "../resources/DataTables/Portuguese-Brasil.json"
-        }
-    } );
-  });
-</script>
-
 
 @endsection
