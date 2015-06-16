@@ -5,52 +5,56 @@
     <div class="row">
     
 <div class="form-group">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Matérias <a class="btn btn-success" href="{!!URL::route('materias_r.create')!!}">  Novo +</a></h1>
         <div class="panel text-right">
-     <a class="btn btn-success" href="{!!URL::route('materias_r.create')!!}">Cadastrar Novo +</a>
+    
          </div>
   </div>
 </div>
 </div>
   <div class="row">
     
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Materias</div>
+        <div class="panel-heading">Consulta</div>
         <div class="panel-body">
   
   
   
-  <table id="tbMaterias">
+  <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <th>Dia da semana</th>
-                   <th>Horario</th>
-                      <th>ID professor</th>
+                <th>Horario</th>
+                <th>ID professor</th>
             </tr>
      </thead>
      <tbody>
       
-                @foreach($materias as $materia){
+                @foreach($materias as $materia)
        
-                   <tr>
+                  <tr>
                     <td>
-                        {{$materia->id_materia; }}
+                        {{$materia->id_materia}}
                     </td>
-                       <td>
-                           {{$materia->horario->dia_semana;}}
-                           <td>
-                           {{$materia->horario->horario;}}
-                       </td>
 
-                       <td>
-                           {{$materia->professor->id_professor;}}
-                       </td>
+                    <td>
+                        {{$materia->horario->dia_semana}}
+                    </td>
 
-                    </tr>
-                    @endforeach
+                    <td>
+                        {{$materia->horario->horario}}
+                    </td>
+
+                    <td>
+                        {{$materia->professor->id_professor}}
+                    </td>
+                  </tr>
+
+                @endforeach
      </tbody>
       
                 
@@ -70,8 +74,13 @@
 
 <script>
   $(document).ready(function(){
-      $('#tbMaterias').DataTable();
+
+    $('#tbMaterias').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
   });
-</script>
+  </script>
 
 @endsection

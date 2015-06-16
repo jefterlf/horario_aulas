@@ -51,7 +51,7 @@ class HorariosController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return Redirect::route('horarios_r.index');
 	}
 
 	/**
@@ -62,7 +62,9 @@ class HorariosController extends Controller {
 	 */
 	public function edit($id)
 	{
-		
+		$horario = Horario::where('id_horario', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  o horario a ser alterada
+		$turmas = Turma::lists('serie','id_turma');//Faz a consulta para carregar o dropdowlist de bimestres
+		return View('horario.edit')->with('horario', $horario)->with(compact('turmas'));//retorna $urma e $bimestres para a view
 	}
 
 	/**
@@ -73,7 +75,12 @@ class HorariosController extends Controller {
 	 */
 	public function update($id)
 	{
-		
+		$horario = Horario::where('id_horario', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$horario->dia_semana=Input::get('dia_semana');//atualiza o dia da tabela horario com os valores vindos do formulário de edição
+		$horario->horario=Input::get('horario');//atualiza o horario da tabela horario com os valores vindos do formulário de edição
+		$horario->id_turma=Input::get('id_turma');//atualiza a turma  da tabela horario com os valores vindos do formulário de edição
+		$turma->save();
+		return Redirect::route('horarios_r.index');
 	}
 
 	/**
@@ -84,7 +91,8 @@ class HorariosController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		
+		$horario = Horario::where('id_horario', $id)->firstOrFail();
+		return Redirect::route('horarios_r.index');
 	}
 
 }

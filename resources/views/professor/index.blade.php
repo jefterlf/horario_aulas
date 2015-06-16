@@ -6,24 +6,25 @@
     <div class="row">
     
 <div class="form-group">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Professores  <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}"> Novo +</a></h1>
         <div class="panel text-right">
-     <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}">Cadastrar Novo +</a>
+
          </div>
   </div>
 </div>
 </div>
   <div class="row">
     
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Professores</div>
+        <div class="panel-heading">Consulta</div>
         <div class="panel-body">
   
   
   
-  <table id="tbProfessor">
+  <table id="conteudo" class="table table-striped table-bordered cellspacing="0" width="100%">
      <thead>         
             <tr>
                 <th>Nome</th>
@@ -45,15 +46,18 @@
                            <?php echo $professor->tipo; ?>
                        </td>
                        <td>
-                           <?php echo $professor->data_admissao; ?>
+
+                           <?php echo date('d/m/Y', strtotime($professor->data_admissao)); //Rasgado
+
+                          ?>
                        </td>
                        <td>
-                           <?php echo $professor->data_demissao; ?>
+                           <?php echo date('d/m/Y', strtotime($professor->data_demissao)); ?>
                        </td>
-
-                     <td>  <a class="btn btn-primary" href="{!!URL::route('professors_r.edit')!!}">Editar</a>
-                       <a class="btn btn-danger" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
-                     </td>
+                    <td>
+                     <a class="btn btn-primary btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
+                       <a class="btn btn-danger btn-sm" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
+                    </td>
                     </tr>
 
       <?php
@@ -73,9 +77,14 @@
 </div>
 
 <script>
-  $(document).ready(function(){
-      $('#tbProfessor').DataTable();
-  });
+    $(document).ready(function(){
+
+        $('#conteudo').dataTable( {
+            "language": {
+                "url": "../resources/DataTables/Portuguese-Brasil.json"
+            }
+        } );
+    });
 </script>
 
 @endsection

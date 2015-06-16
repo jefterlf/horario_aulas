@@ -4,9 +4,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
+      <h1>Professores</h1>
       <div class="panel panel-default">
-        <div class="panel-heading">Cadastro de Professores
-            <a style="margin-left: 630px" class="btn-sm btn-warning" href="{!!URL::route('professors_r.index')!!}">Voltar</a>
+        <div class="panel-heading">Cadastro
+          
         </div>
         <div class="panel-body">
 
@@ -54,5 +55,10 @@
     </div>
   </div>
 </div>
+<nav>
+  <ul class="pager">
+    <li onclick="window.history.back();" ><a href="" >Voltar</a></li>
+  </ul>
+</nav>
 </div>
 @endsection
