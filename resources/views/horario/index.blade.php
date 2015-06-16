@@ -40,7 +40,7 @@
                       <?php echo $horario->turma->serie ?>
                     </td>
                     <td>
-                      <a class="btn btn-primary" href="{{URL::to('horarios_r/'. $horario->dia_semana . '/edit')}}">Editar</a>
+                      <a class="btn btn-primary btn-sm" href="{{URL::to('horarios_r/'. $horario->dia_semana . '/edit')}}">Editar</a>
                     </td>
                   </tr>
                 <?php } ?>                 

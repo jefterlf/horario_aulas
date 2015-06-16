@@ -46,8 +46,8 @@
                       </td>
                       <td>
             
-                              <a class="btn btn-primary" href="{{URL::to('bimestres_r/'. $bimestre->id_bimestre . '/edit')}}">Editar</a>
-                        <a class="btn btn-danger" href="{!!URL::route('bimestres_r.destroy')!!}">Apagar</a>
+                              <a class="btn btn-primary v" href="{{URL::to('bimestres_r/'. $bimestre->id_bimestre . '/edit')}}">Editar</a>
+                        <a class="btn btn-danger btn-sm" href="{!!URL::route('bimestres_r.destroy')!!}">Apagar</a>
                       </td>  
                      </tr>
                      
