@@ -29,11 +29,8 @@ class MateriasController extends Controller {
 	 */
 	public function create()
 	{
-		$professor = Professor::lists('professor', 'id_professor');
+		$professor = Professor::lists('nome', 'id_professor');
 		return view('materia.create', compact('professor'));
-
-		$horarios = Horario::lists('horario', 'id_horario');
-		return view('materia.create', compact('horarios'));
 	}
 
 	/**
