@@ -14,9 +14,6 @@ class HorariosController extends Controller {
 	 *
 	 * @return Response
 	 */
-
-	public function __construct() { $this->middleware('auth'); } //Se o usuário não estiver logado, redireciona para a página de login
-	
 	public function index()
 	{
 		$horarios = Horario::all();
