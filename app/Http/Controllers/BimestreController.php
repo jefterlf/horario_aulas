@@ -14,13 +14,16 @@ class BimestreController extends Controller {
 	 * @return Response
 	 */
 
-	public function __construct() { $this->middleware('auth'); } //Se o usuário não estiver logado, redireciona para a página de login
+	public function __construct() { 
+		$this->middleware('auth'); 
+	} //Se o usuário não estiver logado, redireciona para a página de login
 
 	public function index()
 	{
 		$bimestres = Bimestre::all();
 		return view('bimestre.index', compact('bimestres'));
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -52,7 +55,9 @@ class BimestreController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$bimestres = Bimestre::where('id_bimestre', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		return View('bimestre.delete')->with('bimestre', $bimestres)->with(compact('bimestres'));//retorna $urma e $bimestres para a view
+	
 	}
 
 	/**
@@ -92,14 +97,8 @@ class BimestreController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		// delete
-        $bimestres = Bimestres::find($id);
-        $bimestres->delete();
-
-        // redirect
-        Session::flash('message', 'Bimestre deletado com sucesso!');
-        return Redirect::to('bimestres_r');
-		
+		Bimestre::destroy($id);
+		return Redirect::route('bimestres_r.index');	
 	}
 
 }
