@@ -20,8 +20,7 @@ class TurmasController extends Controller {
 
 	public function index()
 	{
-		
-		
+				
 		$turmas = Turma::all();
 		return view('turma.index',compact('turmas'));
 	}
