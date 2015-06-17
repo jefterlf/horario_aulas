@@ -24,7 +24,7 @@
   
         <div class="panel-body">
 
-       <form lass="form-horizontal">
+       <form class="form-horizontal">
                  <fieldset disabled>
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="serie">Serie:</label>

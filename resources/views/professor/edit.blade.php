@@ -12,15 +12,15 @@
                     {!! Form::model($professor, array('route' => array('professors_r.update', $professor->id_professor), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
                     <div class="form-group">
                         <label  class="col-md-4 control-label" for="nome">Nome:</label>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input class="form-control" type="text" name="nome" value="{{ $professor->nome }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label"  for="tipo">Tipo:</label>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
 
-                            <select id="tipo" name="tipo"><option value="Contratado">Contratado</option>
+                            <select id="tipo" name="tipo" class="form-control"><option value="Contratado">Contratado</option>
                                 <option value="Efetivo">Efetivo</option></select>
 
 
@@ -29,16 +29,22 @@
 
                     <div class="form-group">
                         <label  class="col-md-4 control-label" for="data_admissao">Data Admissão:</label>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <input class="form-control" type="date" name="data_admissao" value="{{ $professor->data_admissao }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-4 control-label" for="data_demissao">Data Demissão:</label>
-                        <div class="col-md-6">
+                        <div class="col-md-3 ">
                             <input class="form-control" type="date" name="data_demissao" value="{{ $professor->data_demissao }}">
                         </div>
                     </div>
+
+
+                   
+
+
+
 
                     <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                     <div class="form-group">

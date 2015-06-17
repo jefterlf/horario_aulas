@@ -45,9 +45,8 @@
                            <?php echo date('d/m/Y', strtotime($bimestre->data_final)); ?>
                       </td>
                       <td>
-            
-                              <a class="btn btn-primary btn-sm" href="{{URL::to('bimestres_r/'. $bimestre->id_bimestre . '/edit')}}">Editar</a>
-                        <a class="btn btn-danger btn-sm" href="{!!URL::route('bimestres_r.destroy')!!}">Apagar</a>
+                        <a class="btn btn-primary btn-sm" href="{{URL::to('bimestres_r/'. $bimestre->id_bimestre . '/edit')}}">Editar</a>
+                        <a class="btn btn-danger btn-sm" href="{{URL::to('bimestres_r/'. $bimestre->id_bimestre)}}">Deletar</a>
                       </td>  
                      </tr>
                      
