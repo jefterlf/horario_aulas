@@ -13,7 +13,7 @@ class ProfessorController extends Controller {
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
-	 */
+	 */public function __construct() { $this->middleware('auth'); }
 	public function index()
 	{
 		$professores = Professor::all();
@@ -49,7 +49,8 @@ class ProfessorController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $professor = Professor::where('id_professor', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterad
+        return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
 	}
 
 	/**
@@ -90,7 +91,11 @@ class ProfessorController extends Controller {
      */
     public function destroy($id)
     {
-        //
+        Turma::destroy($id);
+        return Redirect::route('professors_r.index');
+    }
+    public function teste($id_professor){
+        return Redirect::route('professors_r.index');
     }
 
 }
