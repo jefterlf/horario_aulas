@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>EEACB Horários</title>
 
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -29,7 +29,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<style>
-		
+
 
 	</style>
 </head>
@@ -51,17 +51,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span> Controle de Horarios EEACB</a>
+            <a class="navbar-brand" href="{{ url('/') }}"><span class="glyphicon glyphicon-home"></span> Controle de Horários EEACB</a>
 </div>
 <div id="navbar" class="navbar-collapse collapse"  >
-	
+
 							@if (Auth::guest())
 					 <ul class="nav navbar-nav navbar-right">
 	           	 		<li><a href="{{ url('/auth/login') }}">Login</a></li>
          		   </ul>
 							 @else
             <ul class="nav navbar-nav">
-				
+
                     <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>
                     <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>
                     <li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
@@ -77,10 +77,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                 	<li><a href="{{ url('/auth/logout') }}"><span class="glyphicon glyphicon-off"> Sair</a></li>
                 </ul>
               </li>
-			  
+
 			 </ul>
 	@endif
-			
+
 
 </div><!--/.nav-collapse -->
 </div><!--/.container-fluid -->
@@ -93,11 +93,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 <script>
 $(function(){
-	 
 
-});  
- 
- 
+
+});
+
+
 
  </script>
- 
+
