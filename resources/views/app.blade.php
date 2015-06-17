@@ -56,21 +56,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 <div id="navbar" class="navbar-collapse collapse"  >
 
 							@if (Auth::guest())
-					 <ul class="nav navbar-nav navbar-right">
-	           	 		<li><a href="{{ url('/auth/login') }}">Login</a></li>
-         		   </ul>
+					 			<ul class="nav navbar-nav navbar-right">
+	           	 						<li><a href="{{ url('/auth/login') }}">Entrar</a></li>
+         		  			    </ul>
 							 @else
             <ul class="nav navbar-nav">
-
-                    <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>
+					<li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
+					<li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
+					<li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>                    
+                    <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags " > Turmas</a></li>
                     <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>
-                    <li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
-                    <li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
-                    <li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>
+                    
+                    
 
             </ul>
 			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="{!!URL::route('usuarios_r.create')!!}">Usuário</a></li>
+			  <li><a href="{!!URL::route('usuarios_r.create')!!}">Registrar</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
