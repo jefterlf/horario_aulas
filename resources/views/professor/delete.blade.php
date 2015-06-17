@@ -24,19 +24,28 @@
   
         <div class="panel-body">
 
-       <form lass="form-horizontal">
+       <form class="form-horizontal">
+
                  <fieldset disabled>
-              <div class="form-group">
-                <label  class="col-md-4 control-label" for="nome">Nome:</label>
-                <div class="col-md-6">
-                   <input class="form-control" type="text" name="nome" value="{{ $professor->nome }}">
-                 </div>
-               </div>
 
-         
+                      <div class="form-group">
+                          <label  class="col-md-4 control-label" for="nome">Nome:</label>
+                              <div class="col-md-6">
+                                  <input class="form-control" type="text" name="nome" value="{{ $professor->nome }}"> 
+                              </div>
+                      </div>
 
-   </fieldset>
-  </form>
+                      <div class="form-group">
+                          <label  class="col-md-4 control-label" for="tipo">Tipo:</label>
+                              <div class="col-md-6">
+                                  <input class="form-control" type="text" name="tipo" value="{{ $professor->tipo }}"> 
+                              </div>
+                      </div>
+
+                              
+
+         </fieldset>
+        </form>
 
 
       </div>

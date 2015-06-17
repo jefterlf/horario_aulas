@@ -55,8 +55,8 @@
                            <?php echo date('d/m/Y', strtotime($professor->data_demissao)); ?>
                        </td>
                     <td>
-                     <a class="btn btn-primary btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
-                       <a class="btn btn-danger btn-sm" href="{!!URL::route('professors_r.destroy')!!}">Apagar</a>
+                          <a class="btn btn-primary btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
+                          <a class="btn btn-danger btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor)}}">Deletar</a>                      
                     </td>
                     </tr>
 

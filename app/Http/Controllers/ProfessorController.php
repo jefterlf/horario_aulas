@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Professor;
 use Input, Redirect, Reponse;
 
-use Illuminate\Http\Request;
 
 class ProfessorController extends Controller {
 
@@ -13,7 +13,9 @@ class ProfessorController extends Controller {
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
-	 */public function __construct() { $this->middleware('auth'); }
+	 */
+
+    public function __construct() { $this->middleware('auth'); }
 	public function index()
 	{
 		$professores = Professor::all();
@@ -91,11 +93,9 @@ class ProfessorController extends Controller {
      */
     public function destroy($id)
     {
-        Turma::destroy($id);
+        Professor::destroy($id);
         return Redirect::route('professors_r.index');
     }
-    public function teste($id_professor){
-        return Redirect::route('professors_r.index');
-    }
+   
 
 }
