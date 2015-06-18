@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Professor;
 use Input, Redirect, Reponse;
 
-use Illuminate\Http\Request;
 
 class ProfessorController extends Controller {
 
@@ -14,6 +14,8 @@ class ProfessorController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+    public function __construct() { $this->middleware('auth'); }
 	public function index()
 	{
 		$professores = Professor::all();
@@ -49,7 +51,8 @@ class ProfessorController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $professor = Professor::where('id_professor', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterad
+        return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
 	}
 
 	/**
@@ -90,7 +93,9 @@ class ProfessorController extends Controller {
      */
     public function destroy($id)
     {
-        //
+        Professor::destroy($id);
+        return Redirect::route('professors_r.index');
     }
+   
 
 }

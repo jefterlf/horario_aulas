@@ -1,4 +1,3 @@
-
 @extends('app')
 @section('content')
 <div class="container-fluid">
@@ -21,12 +20,9 @@
                  <div class="col-md-6">
                   
                      <?php echo Form::select('id_bimestre', $bimestres, null, array('class' => 'form-control'));?>
-            
-                   
+                             
                  </div>
-               </div>
-              
-                
+               </div>                          
               <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                 <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
