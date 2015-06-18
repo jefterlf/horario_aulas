@@ -53,11 +53,9 @@ class ProfessorController extends Controller {
 	{
         
 
-       // $professor = Professor::where('id_professor', $id)->firstOrFail();
-        echo $tipo;                 
-       // return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
-      //  }else
-       // return View('professor.show')->with('professor', $professor)->with(compact('professor'));
+       $professor = Professor::where('id_professor', $id)->firstOrFail();                     
+       return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
+      
 	}
 
 	/**

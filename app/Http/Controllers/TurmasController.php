@@ -102,7 +102,5 @@ class TurmasController extends Controller {
 		Turma::destroy($id);
 		return Redirect::route('turmas_r.index');
 	}
-public function teste($id_turma){
-return Redirect::route('turmas_r.index');	
-}
+
 }

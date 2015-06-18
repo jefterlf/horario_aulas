@@ -21,7 +21,6 @@ class MateriasController extends Controller {
 	public function index()
 	{
 		$materias = Materia::all();
-//teste
 		return view('materia.index',compact('materias'));
 	}
 
@@ -32,8 +31,9 @@ class MateriasController extends Controller {
 	 */
 	public function create()
 	{
-		$professor = Professor::lists('nome', 'id_professor');
-		return view('materia.create', compact('professor'));
+		$professores = Professor::lists('nome', 'id_professor');
+		$horario = Horario::lists('horario', 'id_horario');
+		return view('materia.create', compact('professores','horario'));
 	}
 
 	/**
@@ -55,7 +55,7 @@ class MateriasController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return Redirect::route('materias_r.index');
 	}
 
 	/**
@@ -66,7 +66,9 @@ class MateriasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$materia = Materia::where('id_materia', $id)->firstOrFail();
+		$professores = Professor::lists('nome','id_professor');
+		return View('materias_r.edit')->with('materia', $materia)->with(compact('professores'));
 	}
 
 	/**
@@ -77,7 +79,13 @@ class MateriasController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$materia = Materia::where('id_materia', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$materia->id_horario=Input::get('id_horario');//atualiza o dia da tabela horario com os valores vindos do formulário de edição
+		$materia->dia_semana=Input::get('dia_semana');//atualiza o horario da tabela horario com os valores vindos do formulário de edição
+		$materia->horario=Input::get('horario');//atualiza a turma  da tabela horario com os valores vindos do formulário de edição
+		$materia->id_professor=Input::get('id_professor');
+		$horario->save();
+		return Redirect::route('materias_r.index');
 	}
 
 	/**
@@ -88,7 +96,8 @@ class MateriasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$materia = Materia::where('id_materia', $id)->firstOrFail();
+		return Redirect::route('materias_r.index');
 	}
 
 }

@@ -26,39 +26,37 @@
   <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
-                <th>ID</th>
+                <th>Horario</th>
                 <th>Dia da semana</th>
                 <th>Horario</th>
-                <th>ID professor</th>
+                <th>Professor</th>
+                <th>Ações</th>
             </tr>
      </thead>
-     <tbody>
-      
-                @foreach($materias as $materia)
-       
+
+      <tbody>
+                <?php foreach($materias as $materia) { ?>
                   <tr>
                     <td>
-                        {{$materia->id_materia}}
+                      <?php echo $materia->id_horario ?>
                     </td>
-
                     <td>
-                        {{$materia->horario->dia_semana}}
+                      <?php echo $materia->dia_semana ?>
                     </td>
-
                     <td>
-                        {{$materia->horario->horario}}
+                      <?php echo $materia->horario ?>
                     </td>
-
                     <td>
-                        {{$materia->professor->id_professor}}
+                      <?php echo $materia->professor->nome ?>
+                    </td>
+                    <td>
+                      <a class="btn btn-primary" href="{{URL::to('materias_r/'. $materia->id_materia . '/edit')}}">Editar</a>
+                      <a class="btn btn-danger" href="{{URL::to('materias_r/'. $materia->id_materia . '/delete')}}">Apagar</a>
                     </td>
                   </tr>
-
-                @endforeach
-     </tbody>
-      
-                
-            
+                <?php } ?>                 
+              </tbody>
+                  
 
 
   </table>

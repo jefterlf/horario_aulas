@@ -19,7 +19,7 @@
                  </div>
                </div>
                 <div class="form-group">
-                    <label class="col-md-4 control-label"  for="tipo">Tipo:</label>
+                    <label class="col-md-4 control-label" for="tipo">Tipo:</label>
                     <div class="col-md-3">
 
                      <select class="form-control" id="tipo" name="tipo"><option value="Contratado">Contratado</option>
