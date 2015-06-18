@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+/*testanto */
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
