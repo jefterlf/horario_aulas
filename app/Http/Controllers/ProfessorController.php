@@ -51,8 +51,13 @@ class ProfessorController extends Controller {
 	 */
 	public function show($id)
 	{
-        $professor = Professor::where('id_professor', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterad
-        return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
+        
+
+       // $professor = Professor::where('id_professor', $id)->firstOrFail();
+        echo $tipo;                 
+       // return View('professor.delete')->with('professor', $professor)->with(compact('professor'));
+      //  }else
+       // return View('professor.show')->with('professor', $professor)->with(compact('professor'));
 	}
 
 	/**

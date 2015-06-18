@@ -14,15 +14,15 @@
             <form class="form-horizontal" role="form" action="{!!URL::route('professors_r.store')!!}" method="post">
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="nome">Nome:</label>
-                <div class="col-md-6">
+                <div class="col-md-5">
                    <input class="form-control" type="text" name="nome">
                  </div>
                </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label"  for="tipo">Tipo:</label>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
 
-                     <select id="tipo" name="tipo"><option value="Contratado">Contratado</option>
+                     <select class="form-control" id="tipo" name="tipo"><option value="Contratado">Contratado</option>
                          <option value="Efetivo">Efetivo</option></select>
 
 
@@ -31,13 +31,13 @@
 
                 <div class="form-group">
                     <label  class="col-md-4 control-label" for="data_admissao">Data Admissão:</label>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <input class="form-control" type="date" name="data_admissao">
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="col-md-4 control-label" for="data_demissao">Data Demissão:</label>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <input class="form-control" type="date" name="data_demissao">
                     </div>
                 </div>

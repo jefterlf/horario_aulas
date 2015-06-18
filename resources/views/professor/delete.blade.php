@@ -45,14 +45,14 @@
                       <div class="form-group">
                           <label  class="col-md-4 control-label" for="data_admissao">Data Admissão:</label>
                               <div class="col-md-3">
-                                  <input class="form-control" type="text" name="data_admissao" value="{{ $professor->data_admissao }}"> 
+                                  <input class="form-control" type="text" name="data_admissao" value="{{ date('d/m/Y', strtotime ($professor->data_admissao)) }}"> 
                               </div>
                       </div>
 
                       <div class="form-group">
                           <label  class="col-md-4 control-label" for="data_demissao">Data Demissão:</label>
                               <div class="col-md-3">
-                                  <input class="form-control" type="text" name="data_demissao" value="{{ $professor->data_demissao }}"> 
+                                  <input class="form-control" type="text" name="data_demissao" value="{{ date('d/m/Y', strtotime ($professor->data_demissao)) }}"> 
                               </div>
                       </div>
 

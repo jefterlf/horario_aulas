@@ -56,7 +56,8 @@
                        </td>
                     <td>
                           <a class="btn btn-primary btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor . '/edit')}}">Editar</a>
-                          <a class="btn btn-danger btn-sm" href="{{URL::to('professors_r/'. $professor->id_professor)}}">Deletar</a>                      
+                          <a class="btn btn-danger btn-sm" value="1" href="{{URL::to('professors_r/'. $professor->id_professor)}}">Deletar</a>     
+                          <a class="btn btn-info btn-sm"  href="{{URL::to('professors_r/'. $professor->id_professor,[1])}}">Ver</a>                       
                     </td>
                     </tr>
 
