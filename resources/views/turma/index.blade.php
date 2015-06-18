@@ -9,7 +9,7 @@
           <h1>Turmas   <a class="btn btn-success" href="{!!URL::route('turmas_r.create')!!}"> Novo +</a></h1>
       <div class="panel panel-default">
         
-        <div class="panel-heading">Consulta</div>
+        <div class="panel-heading"><h4>Consulta</h4></div>
         <div class="panel-body">
   
   

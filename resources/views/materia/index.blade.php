@@ -18,7 +18,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         
-        <div class="panel-heading">Consulta</div>
+        <div class="panel-heading"><h4>Consulta</h4></div>
         <div class="panel-body">
   
   
@@ -26,7 +26,7 @@
   <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
-                <th>Horario</th>
+                <th>Tempo</th>
                 <th>Dia da semana</th>
                 <th>Horario</th>
                 <th>Professor</th>

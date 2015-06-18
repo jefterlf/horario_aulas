@@ -17,13 +17,13 @@
                   </div>
               </div>
               <div class="form-group">
-                <label  class="col-md-4 control-label" for="horario">Horario:</label>
+                <label  class="col-md-4 control-label" for="horario">Tempo:</label>
                   <div class="col-md-6">
                     <input class="form-control" type="text" name="horario"> 
                   </div>
               </div>
               <div class="form-group">
-                  <label class="col-md-4 control-label"  for="horario">id turma:</label>
+                  <label class="col-md-4 control-label"  for="horario">Série:</label>
                     <div class="col-md-6">
                     <?php echo Form::select('id_turma', $turmas, null, array('class' => 'form-control'));?>
                     </div>

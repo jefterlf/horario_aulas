@@ -15,16 +15,16 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-              HORÁRIOS
+              <h4>Consulta</h4>
             </div>
           <div class="panel-body">
             <table id="tbHorarios" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>         
                 <tr>
-                  <th>Dia Semana </th>
-                  <th>Horário </th>
-                  <th>ID Turma </th>
-                  <th></th>
+                  <th>Dia da Semana </th>
+                  <th>Tempo </th>
+                  <th>Série</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,7 +41,7 @@
                     </td>
                     <td>
                       <a class="btn btn-primary" href="{{URL::to('horarios_r/'. $horario->id_horario . '/edit')}}">Editar</a>
-                      <a class="btn btn-danger" href="{{URL::to('horarios_r/'. $horario->id_horario . '/delete')}}">Apagar</a>
+                      <a class="btn btn-danger btn-sm" href="{{URL::to('horarios_r/'. $horario->id_horario)}}">Deletar</a>
                     </td>
                   </tr>
                 <?php } ?>                 

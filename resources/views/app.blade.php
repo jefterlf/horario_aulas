@@ -61,11 +61,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
          		   </ul>
 							 @else
             <ul class="nav navbar-nav">
-
-                    <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>
-                    <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>
-                    <li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
-                    <li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
+            		<li><a href="{!!URL::route('bimestres_r.index')!!}"><span class="glyphicon glyphicon-calendar"> Bimestres</a></li>
+            		<li><a href="{!!URL::route('professors_r.index')!!}"><span class="glyphicon glyphicon-user"> Professores</a></li>
+                    <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>                    
+                    <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>             
                     <li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>
 
             </ul>

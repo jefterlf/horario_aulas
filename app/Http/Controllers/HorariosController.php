@@ -55,7 +55,9 @@ class HorariosController extends Controller {
 	 */
 	public function show($id)
 	{
-		return Redirect::route('horarios_r.index');
+		$horario = Horario::where('id_horario', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		$turmas = Turma::lists('serie', 'id_turma');//Faz a consulta para carregar o dropdowlist de bimestres
+		return View('horario.delete')->with('horario', $horario)->with(compact('turmas','horario'));//retorna $urma e $bimestres para a view
 	}
 
 	/**
@@ -95,7 +97,7 @@ class HorariosController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$horario = Horario::where('id_horario', $id)->firstOrFail();
+		Horario::destroy($id);
 		return Redirect::route('horarios_r.index');
 	}
 

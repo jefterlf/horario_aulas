@@ -11,7 +11,7 @@
 
             <form class="form-horizontal" role="form" action="{!!URL::route('materias_r.store')!!}" method="post">
               <div class="form-group">
-                   <label class="col-md-4 control-label"  for="bimestre">Horario:</label>
+                   <label class="col-md-4 control-label"  for="bimestre">Tempo:</label>
                  <div class="col-md-6">
                   
                      <?php echo Form::select('id_horario', $horario, null, array('class' => 'form-control'));?>         
