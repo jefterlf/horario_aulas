@@ -5,7 +5,7 @@
     <div class="col-md-8 col-md-offset-2">
           <h1>Bimestres  <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Novo +</a></h1>
       <div class="panel panel-default">
-        <div class="panel-heading">Editar</div>
+        <div class="panel-heading"><h4>Editar</h4></div>
         <div class="panel-body">
 
           {!! Form::model($bimestres, array('route' => array('bimestres_r.update', $bimestres->id_bimestre), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
