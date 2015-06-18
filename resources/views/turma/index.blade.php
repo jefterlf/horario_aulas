@@ -35,10 +35,10 @@
                        <td> 
 
                           <a class="btn btn-primary btn-sm" href="{{URL::to('turmas_r/'. $turma->id_turma . '/edit')}}">Editar</a>
-                          <a class="btn btn-danger btn-sm" href="{{URL::to('turmas_r/'. $turma->id_turma)}}">Deletar</a>
+                          <a class="btn btn-danger btn-sm" href="{{URL::to('turmas_r/'. $turma->id_turma .',del')}}">Deletar</a>
 
 
-  <a class="btn btn-danger btn-sm" href="{{URL::to('turmas_teste_r/'. $turma->id_turma )}}">teste</a>
+
                        </td>
                     </tr>
       <?php } ?>
