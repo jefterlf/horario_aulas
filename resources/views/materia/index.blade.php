@@ -51,7 +51,7 @@
                     </td>
                     <td>
                       <a class="btn btn-primary" href="{{URL::to('materias_r/'. $materia->id_materia . '/edit')}}">Editar</a>
-                      <a class="btn btn-danger" href="{{URL::to('materias_r/'. $materia->id_materia . '/delete')}}">Apagar</a>
+                      <a class="btn btn-danger btn-sm" href="{{URL::to('materias_r/'. $materia->id_materia)}}">Deletar</a>
                     </td>
                   </tr>
                 <?php } ?>                 

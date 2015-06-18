@@ -55,7 +55,10 @@ class MateriasController extends Controller {
 	 */
 	public function show($id)
 	{
-		return Redirect::route('materias_r.index');
+		$materia = Materia::where('id_materia', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		$professores = Professor::lists('nome', 'id_professor');//Faz a consulta para carregar o dropdowlist de bimestres
+		$horario = Horario::lists('horario', 'id_horario');
+		return View('materia.delete')->with('materia', $materia)->with(compact('professores','horario'));//retorna $urma e $bimestres para a view
 	}
 
 	/**
@@ -68,7 +71,8 @@ class MateriasController extends Controller {
 	{
 		$materia = Materia::where('id_materia', $id)->firstOrFail();
 		$professores = Professor::lists('nome','id_professor');
-		return View('materias_r.edit')->with('materia', $materia)->with(compact('professores'));
+		$horarios = Horario::lists('horario','id_horario');
+		return View('materia.edit')->with('materia', $materia)->with(compact('professores','horarios'));
 	}
 
 	/**
@@ -96,7 +100,7 @@ class MateriasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$materia = Materia::where('id_materia', $id)->firstOrFail();
+		Materia::destroy($id);
 		return Redirect::route('materias_r.index');
 	}
 
