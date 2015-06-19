@@ -26,6 +26,7 @@
   <table id="tbMaterias" class="table table-striped table-bordered cellspacing" width="100%">
      <thead>         
             <tr>
+                <th>Nome da Matéria</th>
                 <th>Tempo</th>
                 <th>Dia da semana</th>
                 <th>Horario</th>
@@ -37,6 +38,9 @@
       <tbody>
                 <?php foreach($materias as $materia) { ?>
                   <tr>
+                    <td>
+                      <?php echo $materia->nome_materia ?>
+                    </td>
                     <td>
                       <?php echo $materia->id_horario ?>
                     </td>

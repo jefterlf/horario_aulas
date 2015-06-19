@@ -84,11 +84,12 @@ class MateriasController extends Controller {
 	public function update($id)
 	{
 		$materia = Materia::where('id_materia', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$materia->nome_materia=Input::get('nome_materia');
 		$materia->id_horario=Input::get('id_horario');//atualiza o dia da tabela horario com os valores vindos do formulário de edição
 		$materia->dia_semana=Input::get('dia_semana');//atualiza o horario da tabela horario com os valores vindos do formulário de edição
 		$materia->horario=Input::get('horario');//atualiza a turma  da tabela horario com os valores vindos do formulário de edição
 		$materia->id_professor=Input::get('id_professor');
-		$horario->save();
+		$materia->save();
 		return Redirect::route('materias_r.index');
 	}
 

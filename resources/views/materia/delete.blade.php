@@ -28,7 +28,15 @@
        <form class="form-horizontal">
                  
                  <fieldset disabled>
-              
+
+              <div class="form-group">
+                   <label class="col-md-4 control-label"  for="nome_materia">Nome da Matéria:</label>
+                 <div class="col-md-6">
+                  
+                    <input class="form-control" type="text" name="nome_materia" value="{{ $materia->nome_materia }}"> 
+                   
+                 </div>
+               </div>
 
               <div class="form-group">
                    <label class="col-md-4 control-label"  for="id_horario">Horario:</label>
