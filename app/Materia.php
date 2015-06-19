@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materia extends Model {
 
-	protected $fillable = ['id_horario','dia_semana','horario','id_professor'];
+	protected $fillable = ['nome_materia','id_horario','dia_semana','horario','id_professor'];
 	protected $guarded = ['created_at','updated_at'];
 	protected $primaryKey = "id_materia";
 

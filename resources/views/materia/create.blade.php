@@ -10,6 +10,32 @@
         <div class="panel-body">
 
             <form class="form-horizontal" role="form" action="{!!URL::route('materias_r.store')!!}" method="post">
+
+              <div class="form-group">
+                    <label class="col-md-4 control-label" for="nome_materia">Nome da Matéria:</label>
+                    <div class="col-md-3">
+
+                     <select class="form-control" id="nome_materia" name="nome_materia">
+                      <option value="Arte">Arte</option>
+                      <option value="Biologia">Biologia</option>
+                      <option value="Espanhol">Espanhol</option>
+                      <option value="Filosofia">Filosofia</option>
+                      <option value="Física">Física</option>
+                      <option value="Geografia">Geografia</option>
+                      <option value="História">História</option>
+                      <option value="Inglês">Inglês</option>
+                      <option value="Língua Portuguesa">Língua Portuguesa</option>
+                      <option value="Literatura">Literatura</option>
+                      <option value="Matemática">Matemática</option>
+                      <option value="Química">Química</option>
+                      <option value="Sociologia">Sociologia</option>
+                      </option>                     
+                    </select>
+
+
+                    </div>
+                </div>
+
               <div class="form-group">
                    <label class="col-md-4 control-label"  for="bimestre">Tempo:</label>
                  <div class="col-md-6">

@@ -16,6 +16,7 @@ class CreateMateriasTable extends Migration {
 		{
 
 			$table->increments('id_materia');
+			$table->string('nome_materia',255);
 			$table->integer('id_horario')->unsigned();
             $table->integer('dia_semana')->unsigned();
 			$table->integer('horario')->unsigned();
