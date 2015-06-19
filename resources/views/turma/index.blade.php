@@ -7,6 +7,9 @@
 
     <div class="col-md-10 col-md-offset-1">
           <h1>Turmas   <a class="btn btn-success" href="{!!URL::route('turmas_r.create')!!}"> Novo +</a></h1>
+          @if (Session::has('message'))
+          	<div class="alert alert-info">{{ Session::get('message') }}</div>
+          @endif
       <div class="panel panel-default">
         
         <div class="panel-heading"><h4>Consulta</h4></div>

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Turma;
 use App\Bimestre;
-use Input, Redirect,Response;
+use Validator, Input, Redirect,Response, Session;
 
 
 class TurmasController extends Controller {
@@ -42,9 +42,30 @@ class TurmasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		$turma = Turma::create(Input::all());
+		
+		$messages = [
+    		'required' => 'O :attribute é obrigatorio',
+		];
+
+
+		$rules = array(
+			'serie'       => 'required',
+			'id_bimestre'      => 'required'
+		);
+		  $validator = Validator::make($request->all(), $rules, $messages);
+
+
+		
+		if ($validator->fails()) {
+			   return redirect()->back()->withErrors($validator->errors());
+		} else {
+
+			$turma = Turma::create($request->all());
+			// redirect
+			Session::flash('message', 'Nerd Cadastrado com sucesso!');
+		}
 		return Redirect::route('turmas_r.index');
 	}
 
