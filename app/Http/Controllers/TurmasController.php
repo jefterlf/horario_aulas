@@ -46,24 +46,24 @@ class TurmasController extends Controller {
 	{
 		
 		$messages = [
-    		'required' => 'O :attribute é obrigatorio',
+    		'required' => 'O :attribute é obrigatorio', //Mensagem de erro caso tenha algum
 		];
 
-
+		//define os campos obrigatórios
 		$rules = array(
 			'serie'       => 'required',
 			'id_bimestre'      => 'required'
 		);
-		  $validator = Validator::make($request->all(), $rules, $messages);
+		  $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
 
 
-		
+		//se ouver erros na validação retorna para a view crete
 		if ($validator->fails()) {
 			   return redirect()->back()->withErrors($validator->errors());
 		} else {
-
+			//se os campos forem validos salva no banco
 			$turma = Turma::create($request->all());
-			// redirect
+			// salva a mensagem na sessin para ser exibida na index
 			Session::flash('message', 'Nerd Cadastrado com sucesso!');
 		}
 		return Redirect::route('turmas_r.index');
