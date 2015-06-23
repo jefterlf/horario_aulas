@@ -18,8 +18,8 @@ class CreateMateriasTable extends Migration {
 			$table->increments('id_materia');
 			$table->string('nome_materia',255);
 			$table->integer('id_horario')->unsigned();
-            $table->integer('dia_semana')->unsigned();
-			$table->integer('horario')->unsigned();
+            $table->string('dia_semana',255)->unsigned();
+			$table->string('horario',255)->unsigned();
 			$table->integer('id_professor')->unsigned();
 
 			$table->foreign('id_horario')->references('id_horario')->on('horarios');
