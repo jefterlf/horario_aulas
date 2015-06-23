@@ -6,6 +6,9 @@
     <div class="form-group">
       <div class="col-md-10 col-md-offset-1">
             <h1>Horarios <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a></h1>
+             @if (Session::has('message'))
+             <div class="alert alert-info">{{ Session::get('message') }}</div>
+             @endif
         <div class="panel text-right">
          Consulta
         </div>
