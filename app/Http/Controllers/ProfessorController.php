@@ -95,14 +95,33 @@ class ProfessorController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id ,Request $request)
     {
+         $messages = [
+            'required' => 'O campo :attribute é obrigatório', //Mensagem de erro caso tenha algum
+        ];
+
+        //define os campos obrigatórios
+        $rules = array(
+            'nome'       => 'required',
+            'data_admissao'      => 'required',                
+        );
+          $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+
+
+        //se ouver erros na validação retorna para a view crete
+        if ($validator->fails()) {
+               return redirect()->back()->withErrors($validator->errors());
+        } else {
+
         $professor = Professor::where('id_professor',$id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
         $professor->nome       = Input::get('nome');//atualiza a seria da  da turma com os valores vindos do formulário de edição
         $professor->tipo = Input::get('tipo');//atualiza o bimestre  da  da turma com os valores vindos do formulário de edição
         $professor->data_admissao = Input::get('data_admissao');
         $professor->data_demissao = Input::get('data_demissao');
         $professor->save();
+        Session::flash('message', 'Professor(a) '.$request->nome.' Alterado com sucesso!');
+}
             return Redirect::route('professors_r.index');
     }
 
