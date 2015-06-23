@@ -4,8 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Professor;
-use Input, Redirect, Reponse;
-
+use Validator, Input, Redirect,Response, Session;
 
 class ProfessorController extends Controller {
 
@@ -38,11 +37,30 @@ class ProfessorController extends Controller {
 	 *
 	 * @return Response
 	 */
-    public function store()
+    public function store(Request $request)
     {
+        
+        $messages = [
+            'required' => 'O campo :attribute é obrigatório', //Mensagem de erro caso tenha algum
+        ];
+
+        //define os campos obrigatórios
+        $rules = array(
+            'nome'       => 'required',
+            'data_admissao'      => 'required',                
+        );
+          $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+
+
+        //se ouver erros na validação retorna para a view crete
+        if ($validator->fails()) {
+               return redirect()->back()->withErrors($validator->errors());
+        } else {
         $professor = Professor::create(Input::all());
-        return Redirect::route('professors_r.index');
-    }
+
+        Session::flash('message', 'Professor(a) '.$request->nome.' Cadastrado com sucesso!');
+        
+    }return Redirect::route('professors_r.index');}
 	/**
 	 * Display the specified resource.
 	 *

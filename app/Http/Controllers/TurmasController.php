@@ -46,7 +46,8 @@ class TurmasController extends Controller {
 	{
 		
 		$messages = [
-    		'required' => 'O :attribute é obrigatorio', //Mensagem de erro caso tenha algum
+    		'required' => 'O :attribute é obrigatorio',
+    		 //Mensagem de erro caso tenha algum
 		];
 
 		//define os campos obrigatórios
@@ -64,7 +65,7 @@ class TurmasController extends Controller {
 			//se os campos forem validos salva no banco
 			$turma = Turma::create($request->all());
 			// salva a mensagem na sessin para ser exibida na index
-			Session::flash('message', 'Nerd Cadastrado com sucesso!');
+			Session::flash('message', 'Turmas Cadastrado com sucesso!');
 		}
 		return Redirect::route('turmas_r.index');
 	}

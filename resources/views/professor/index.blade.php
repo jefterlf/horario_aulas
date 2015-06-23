@@ -7,16 +7,18 @@
     
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
-        <h1>Professores  <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}"> Novo +</a></h1>
-        <div class="panel text-right">
-
-         </div>
-  </div>
+          <h1>Professores   <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}"> Novo +</a></h1>
+          @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+          @endif
+        </div>
 </div>
 </div>
   <div class="row">
     
     <div class="col-md-10 col-md-offset-1">
+
+
       <div class="panel panel-default">
         
         <div class="panel-heading"><h4>Consulta</h4></div>
