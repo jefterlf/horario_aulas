@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Materia;
 use App\Professor;
 use App\Horario;
-use Input, Redirect,Response;
+use Validator, Input, Redirect,Response, Session;
 
 class MateriasController extends Controller {
 
@@ -41,10 +41,36 @@ class MateriasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		$materia = Materia::create(Input::all());
+
+		$messages = [
+    		'required' => 'O :attribute é obrigatorio', //Mensagem de erro caso tenha algum
+    	];
+
+    	//define os campos obrigatórios
+		$rules = array(
+			'nome_materia'       => 'required',
+			'id_horario'      => 'required',
+			'dia_semana'      => 'required',
+			'horario'      => 'required',
+			'nome'      => 'required'
+		);
+		  $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+
+
+		  //se ouver erros na validação retorna para a view crete
+		if ($validator->fails()) {
+			   return redirect()->back()->withErrors($validator->errors());
+		} else {
+			//se os campos forem validos salva no banco
+			$materia = Materia::create($request->all());
+			// salva a mensagem na sessin para ser exibida na index
+			Session::flash('message', 'Materia Cadastrado com sucesso!');
+		}
 		return Redirect::route('materias_r.index');
+
+
 	}
 
 	/**
