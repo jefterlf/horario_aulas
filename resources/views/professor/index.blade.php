@@ -4,12 +4,15 @@
 
 <div class="container-fluid">
     <div class="row">
-    
+      
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
           <h1>Professores   <a class="btn btn-success" href="{!!URL::route('professors_r.create')!!}"> Novo +</a></h1>
           @if (Session::has('message'))
-            <div class="alert alert-info">{{ Session::get('message') }}</div>
+            <div class="alert alert-info" id="sumir" >{{ Session::get('message') }}</div>
+          @endif
+          @if (Session::has('delet'))
+            <div class="alert alert-danger" id="sumir" >{{ Session::get('delet') }}</div>
           @endif
         </div>
 </div>
@@ -26,6 +29,8 @@
   
   
   
+    
+    
   <table id="conteudo" class="table table-striped table-bordered cellspacing="0" width="100%">
      <thead>         
             <tr>
@@ -69,7 +74,6 @@
 
   </table>
 
- 
       </div>
       </div>
     </div>
@@ -87,6 +91,9 @@
             }
         } );
     });
+$(document).ready( function() {
+        $('#sumir').delay(3000).fadeOut();
+      });
 </script>
 
 @endsection
