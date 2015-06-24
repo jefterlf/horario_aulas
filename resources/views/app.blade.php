@@ -93,9 +93,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 <script>
 $(function(){
 
-
 });
 
-
- </script>
-
+</script>
