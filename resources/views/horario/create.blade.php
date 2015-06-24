@@ -25,13 +25,13 @@
                     <div class="col-md-3">
 
                      <select class="form-control" id="dia_semana" name="dia_semana">
-                      <option value="1">Domingo</option>
-                      <option value="2">Segunda</option>
-                      <option value="3">Terça</option>
-                      <option value="4">Quarda</option>
-                      <option value="5">Quinta</option>
-                      <option value="6">Sexta</option>
-                      <option value="7">Sabado</option>
+                      <option value="Domingo">Domingo</option>
+                      <option value="Segunda">Segunda</option>
+                      <option value="Terça">Terça</option>
+                      <option value="Quarta">Quarta</option>
+                      <option value="Quinta">Quinta</option>
+                      <option value="Sexta">Sexta</option>
+                      <option value="Sábado">Sábado</option>
                                          
                     </select>
 
@@ -42,13 +42,13 @@
                     <div class="col-md-3">
 
                      <select class="form-control" id="horario" name="horario">
-                      <option value="1">1º Tempo</option>
-                      <option value="2">2º Tempo</option>
-                      <option value="3">3º Tempo</option>
-                      <option value="4">4º Tempo</option>
-                      <option value="5">5º Tempo</option>
-                      <option value="6">6º Tempo</option>
-                      <option value="7">7º Tempo</option>
+                      <option value="1º Tempo">1º Tempo</option>
+                      <option value="2º Tempo">2º Tempo</option>
+                      <option value="3º Tempo">3º Tempo</option>
+                      <option value="4º Tempo">4º Tempo</option>
+                      <option value="5º Tempo">5º Tempo</option>
+                      <option value="6º Tempo">6º Tempo</option>
+                      <option value="7º Tempo">7º Tempo</option>
                                          
                     </select>
 
