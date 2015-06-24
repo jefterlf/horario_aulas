@@ -21,17 +21,40 @@
 
             <form class="form-horizontal" role="form" action="{!!URL::route('horarios_r.store')!!}" method="post">
               <div class="form-group">
-                <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
-                  <div class="col-md-6">
-                    <input class="form-control" type="text" name="dia_semana"> 
-                  </div>
-              </div>
-              <div class="form-group">
-                <label  class="col-md-4 control-label" for="horario">Tempo:</label>
-                  <div class="col-md-6">
-                    <input class="form-control" type="text" name="horario"> 
-                  </div>
-              </div>
+                    <label class="col-md-4 control-label" for="dia_semana">Dia da semana:</label>
+                    <div class="col-md-3">
+
+                     <select class="form-control" id="dia_semana" name="dia_semana">
+                      <option value="1">Domingo</option>
+                      <option value="2">Segunda</option>
+                      <option value="3">Terça</option>
+                      <option value="4">Quarda</option>
+                      <option value="5">Quinta</option>
+                      <option value="6">Sexta</option>
+                      <option value="7">Sabado</option>
+                                         
+                    </select>
+
+                      </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-md-4 control-label" for="horario">Tempo:</label>
+                    <div class="col-md-3">
+
+                     <select class="form-control" id="horario" name="horario">
+                      <option value="1">1º Tempo</option>
+                      <option value="2">2º Tempo</option>
+                      <option value="3">3º Tempo</option>
+                      <option value="4">4º Tempo</option>
+                      <option value="5">5º Tempo</option>
+                      <option value="6">6º Tempo</option>
+                      <option value="7">7º Tempo</option>
+                                         
+                    </select>
+
+                      </div>
+                    </div>
+              
               <div class="form-group">
                   <label class="col-md-4 control-label"  for="horario">Série:</label>
                     <div class="col-md-6">
