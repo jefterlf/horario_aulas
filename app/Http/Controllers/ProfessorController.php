@@ -131,9 +131,10 @@ class ProfessorController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
         Professor::destroy($id);
+        Session::flash('delet', 'Professor(a)  Deletado com sucesso!');
         return Redirect::route('professors_r.index');
     }
    
