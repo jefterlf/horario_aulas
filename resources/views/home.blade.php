@@ -10,7 +10,7 @@
 					<h4>Relatório de Professores (Individual)</h4>
 				</div>				
 				<div class="panel-body">
-        			<table id="" class="table table-striped table-bordered cellspacing" width="100%">
+        			<table id="TabelaTeste" class="table table-striped table-bordered cellspacing" width="100%">
         				<form class="form-vertical" role="form" method="post">
         					<thead>
               					<tr>
@@ -38,7 +38,7 @@
               	
 <script>
 	$(document).ready(function(){
-    $('#').dataTable( {
+    $('#TabelaTeste').dataTable( {
         "language": {
             "url": "../resources/DataTables/Portuguese-Brasil.json"
         }
