@@ -1,19 +1,49 @@
 @extends('app')
-
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Início</div>
 
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">      
+			<div class="panel panel-default">
+				<div class="panel-heading" align="center">
+					<h3>E.E. Amélio de Carvalho Baís</h3>
+					<h4>Relatório de Professores (Individual)</h4>
+				</div>				
 				<div class="panel-body">
-					Você está logado!
-                    <br/>
-                    <a class="btn btn-success" href="{!!URL::route('turmas_r.index')!!}"> Voltar</a></h1>
-				</div>
-			</div>
-		</div>
-	</div>
+        			<table id="" class="table table-striped table-bordered cellspacing" width="100%">
+        				<form class="form-vertical" role="form" method="post">
+        					<thead>
+              					<tr>
+                  					<th>Professor</th>
+                  					<th>Professor</th>
+                  					<th>Professor</th>
+              					</tr>
+       						</thead>
+          			</table>
+          			<div class="row">
+						<div class="col-md-8 col-md-offset-9">  
+          					<tbody>
+       							<td>
+                     				<a class="btn btn-primary btn-sm" href="">Gerar PDF</a>
+           							<a class="btn btn-danger btn-sm" href="">Imprimir Relatório</a>
+                     			</td>
+        					</tbody>
+        				</div>
+        			</div>  	
+            	</div>
+      		</div>
+      	</div>
+    </div>
 </div>
+              	
+<script>
+	$(document).ready(function(){
+    $('#').dataTable( {
+        "language": {
+            "url": "../resources/DataTables/Portuguese-Brasil.json"
+        }
+    } );
+  });
+</script>
+
 @endsection
