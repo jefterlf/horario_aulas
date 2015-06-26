@@ -5,7 +5,7 @@
   <div class="row">
     <div class="form-group">
       <div class="col-md-10 col-md-offset-1">
-            <h1>Horarios <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a></h1>
+            <h1>Horários <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a></h1>
              @if (Session::has('message'))
              <div class="alert alert-info">{{ Session::get('message') }}</div>
              @endif
@@ -43,7 +43,7 @@
                       <?php echo $horario->turma->serie ?>
                     </td>
                     <td>
-                      <a class="btn btn-primary" href="{{URL::to('horarios_r/'. $horario->id_horario . '/edit')}}">Editar</a>
+                      <a class="btn btn-primary btn-sm" href="{{URL::to('horarios_r/'. $horario->id_horario . '/edit')}}">Editar</a>
                       <a class="btn btn-danger btn-sm" href="{{URL::to('horarios_r/'. $horario->id_horario)}}">Deletar</a>
                     </td>
                   </tr>

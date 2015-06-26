@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row">
  <div class="col-md-8 col-md-offset-2">
- <h1>Horario</h1>
+ <h1>Horário</h1>
       <div class="panel panel-default">
         
        <div class="alert alert-danger" role="alert">

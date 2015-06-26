@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-          <h1>Horarios   </h1>
+          <h1>Horários   </h1>
           @if (count($errors) > 0)
             <div class="alert alert-danger">
               <strong>Preencha os campo corretamente.</strong> <br><br>
