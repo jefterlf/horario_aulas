@@ -5,23 +5,23 @@
   <div class="row">
     <div class="form-group">
       <div class="col-md-10 col-md-offset-1">
-            <h1>Horários <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a></h1>
-             @if (Session::has('message'))
-             <div class="alert alert-info">{{ Session::get('message') }}</div>
-             @endif
-        <div class="panel text-right">
-         Consulta
+        <h1>Horários <a class="btn btn-success" href="{!!URL::route('horarios_r.create')!!}">Novo +</a></h1>
+          @if (Session::has('message'))
+            <div class="alert alert-info" id="mensagem">{{ Session::get('message') }}</div>
+          @endif
+
+          @if (Session::has('delet'))
+            <div class="alert alert-danger" id="mensagem">{{ Session::get('delet') }}</div>
+          @endif
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Consulta</h4>
-            </div>
+  <div class="row">  
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Consulta</h4></div>
           <div class="panel-body">
-            <table id="tbHorarios" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="tbHorarios" class="table table-striped table-bordered cellspacing" width="100%">
               <thead>         
                 <tr>
                   <th>Dia da Semana </th>
@@ -55,9 +55,7 @@
       </div>
     </div>
   </div>
-</div>
-
- 
+  
 <script>
   $(document).ready(function(){
     $('#tbHorarios').dataTable( {

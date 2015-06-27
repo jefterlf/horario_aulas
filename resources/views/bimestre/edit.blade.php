@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-          <h1>Bimestres  <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Novo +</a></h1>
+          <h1>Bimestre  <a class="btn btn-success" href="{!!URL::route('bimestres_r.create')!!}">Novo +</a></h1>
            @if (Session::has('message'))
             <div class="alert alert-info">{{ Session::get('message') }}</div>
           @endif

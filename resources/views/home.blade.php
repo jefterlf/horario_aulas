@@ -10,30 +10,30 @@
 					<h4>Relatório de Professores (Individual)</h4>
 				</div>				
 				<div class="panel-body">
-        			<table id="TabelaTeste" class="table table-striped table-bordered cellspacing" width="100%">
-        				<form class="form-vertical" role="form" method="post">
-        					<thead>
-              					<tr>
-                  					<th>Professor</th>
-                  					<th>Professor</th>
-                  					<th>Professor</th>
-              					</tr>
+          <table id="TabelaTeste" class="table table-striped table-bordered cellspacing" width="100%">
+        	   <form class="form-vertical" role="form" method="post">
+        		    <thead>
+              	  <tr>
+                    <th>Professor</th>
+                    <th>Professor</th>
+                    <th>Professor</th>
+              		</tr>
        						</thead>
-          			</table>
-          			<div class="row">
-						<div class="col-md-8 col-md-offset-9">  
-          					<tbody>
-       							<td>
-                     				<a class="btn btn-primary btn-sm" href="">Gerar PDF</a>
-           							<a class="btn btn-danger btn-sm" href="">Imprimir Relatório</a>
-                     			</td>
-        					</tbody>
-        				</div>
-        			</div>  	
-            	</div>
-      		</div>
-      	</div>
+              </form>
+          </table>
+          <div class="row">
+						<div class="col-md-8 col-md-offset-10">  
+          	   <tbody>
+       					  <td>
+                    <a class="btn btn-danger btn-sm" href="">Gerar PDF</a>
+                  </td>
+        			 </tbody>
+        		</div>
+        	</div>  	
+        </div>
+      </div>
     </div>
+  </div>
 </div>
               	
 <script>
