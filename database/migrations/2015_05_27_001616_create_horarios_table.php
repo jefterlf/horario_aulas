@@ -18,7 +18,7 @@ class CreateHorariosTable extends Migration {
 			$table->string('dia_semana',255);
 			$table->string('horario',255);
 			$table->integer('id_turma')->unsigned();
-			$table->primary(['dia_semana','tempo','id_turma']);
+			$table->primary(['dia_semana','horario','id_turma']);
 			$table->foreign('id_turma')->references('id_turma')->on('turmas');
 			$table->timestamps();
 		});
