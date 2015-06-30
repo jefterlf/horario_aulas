@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Turma;
 use App\Bimestre;
+use App\Horario;
 use Validator, Input, Redirect,Response, Session;
 
 
@@ -121,7 +122,16 @@ class TurmasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		Turma::destroy($id);
+        $horario = Horario::where('id_turma', $id)->firstOrFail();
+        if($horario->id_turma > 0){
+
+            Session::flash('xabugo', 'Impossivel Excluir!');
+            return Redirect::route('turmas_r.index');
+        }else{
+            Turma::destroy($id);
+        }
+
+
 		return Redirect::route('turmas_r.index');
 	}
 
