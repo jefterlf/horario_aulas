@@ -73,7 +73,7 @@
     } );
   });
   $(document).ready( function() {
-        $('#mensagem').delay(3000).fadeOut();
+        $('#mensagem').delay(4000).fadeOut();
   });
   </script>
 

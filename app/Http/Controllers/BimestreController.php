@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Bimestre;
+use App\Turma;
 use Validator, Input, Redirect,Response, Session;
 
 class BimestreController extends Controller {
@@ -135,11 +136,17 @@ class BimestreController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id, Request $request)
-	{
-		Bimestre::destroy($id);
-		Session::flash('delet', 'Bimestre deletado com sucesso !');
-		return Redirect::route('bimestres_r.index');	
-	}
 
+	public function destroy($id)
+	{
+		$turma = Turma::where('id_bimestre',$id)->firstOrFail();
+		if ($turma->id_bimestre > 0) {
+        	Session::flash('delet', 'Bimestre já cadastrado, não é permitido a exclusão !!!');
+        	return Redirect::route('bimestres_r.index');
+		} else {
+			Bimestre::destroy($id);
+			Session::flash('delet', 'Bimestre excluído com sucesso !!!');	
+       	}
+       	return Redirect::route('bimestres_r.index');
+	}
 }
