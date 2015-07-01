@@ -76,11 +76,13 @@ class HorariosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($model)
 	{
-		$horario = Horario::where('id_horario', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
+		
+		$value = explode (",",$model);
+		$horario = Horario::where('dia_semana', $value[0])->where('horario',$value[1])->where('id_turma',$value[2])->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
 		$turmas = Turma::lists('serie', 'id_turma');//Faz a consulta para carregar o dropdowlist de bimestres
-		return View('horario.delete')->with('horario', $horario)->with(compact('turmas','horario'));//retorna $urma e $bimestres para a view
+		return View('horario.delete')->with('horario', $horario)->with(compact('turmas'));//retorna $urma e $bimestres para a view
 	}
 
 	/**
@@ -89,9 +91,10 @@ class HorariosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($model)
 	{
-		$horario = Horario::where('id_horario', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  o horario a ser alterada
+		$value = explode(",",$model);
+		$horario = Horario::where('dia_semana', $value[0])->where('horario',$value[1])->where('id_turma',$value[2])->firstOrFail();
 		$turmas = Turma::lists('serie','id_turma');//Faz a consulta para carregar o dropdowlist de bimestres
 		return View('horario.edit')->with('horario', $horario)->with(compact('turmas'));//retorna $urma e $bimestres para a view
 	}
@@ -102,9 +105,10 @@ class HorariosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($model)
 	{
-		$horario = Horario::where('id_horario', $id)->firstOrFail(); //a consulta para encontrar a turma a ser alterada
+		$value = explode(",",$model);
+		$horario = Horario::where('dia_semana', $value[0])->where('horario',$value[1])->where('id_turma',$value[2])->firstOrFail();//a consulta para encontrar a turma a ser alterada
 		$horario->dia_semana=Input::get('dia_semana');//atualiza o dia da tabela horario com os valores vindos do formulário de edição
 		$horario->horario=Input::get('horario');//atualiza o horario da tabela horario com os valores vindos do formulário de edição
 		$horario->id_turma=Input::get('id_turma');//atualiza a turma  da tabela horario com os valores vindos do formulário de edição
@@ -118,9 +122,10 @@ class HorariosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($model)
 	{
-		Horario::destroy($id);
+		$value = explode(",",$model);
+		$horario = Horario::where('dia_semana',$value[0])->where('horario',$value[1])->where('id_turma',$value[2])->delete();
 		return Redirect::route('horarios_r.index');
 	}
 

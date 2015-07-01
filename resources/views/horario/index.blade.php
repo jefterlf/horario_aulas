@@ -43,8 +43,8 @@
                       <?php echo $horario->turma->serie ?>
                     </td>
                     <td>
-                      <a class="btn btn-primary btn-sm" href="{{URL::to('horarios_r/'. $horario->id_horario . '/edit')}}">Editar</a>
-                      <a class="btn btn-danger btn-sm" href="{{URL::to('horarios_r/'. $horario->id_horario)}}">Deletar</a>
+                      <a class="btn btn-primary btn-sm" href="{{URL::to('horarios_r/'. $horario->dia_semana .','. $horario->horario .','.$horario->id_turma . '/edit')}}">Editar</a>
+                      <a class="btn btn-danger btn-sm" href="{{URL::to('horarios_r/'. $horario->dia_semana .','. $horario->horario .','.$horario->id_turma )}}">Deletar</a>
                     </td>
                   </tr>
                 <?php } ?>                 

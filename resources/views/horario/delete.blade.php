@@ -10,7 +10,7 @@
         
        <div class="alert alert-danger" role="alert">
        
-  {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('horarios_r.destroy', $horario->id_horario))) !!}
+  {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('horarios_r.destroy', $horario->dia_semana .','.$horario->horario .','.$horario->id_turma ))) !!}
  <h4> Você realmente deseja deletar este registro?  
                              {!! Form::submit('Deletar', array('class' => 'btn btn-danger')) !!}
                          <input onclick="window.history.back();"  type="submit" class="btn btn-primary" value="Cancelar" />

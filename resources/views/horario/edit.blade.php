@@ -12,7 +12,7 @@
 
         	<div class="panel-body">
 
-         {!! Form::model($horario, array('route' => array('horarios_r.update', $horario->id_horario), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
+         {!! Form::model($horario, array('route' => array('horarios_r.update', $horario->dia_semana .','.$horario->horario . ',' . $horario->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
                
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia semana:</label>
