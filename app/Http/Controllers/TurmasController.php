@@ -116,7 +116,7 @@ class TurmasController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 *
+	 *ff
 	 * @param  int  $id
 	 * @return Response
 	 */
