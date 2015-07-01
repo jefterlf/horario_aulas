@@ -139,14 +139,18 @@ class BimestreController extends Controller {
 
 	public function destroy($id)
 	{
-		$turma = Turma::where('id_bimestre',$id)->firstOrFail();
-		if ($turma->id_bimestre > 0) {
+
+		$turma = Turma::where('id_bimestre',$id)->count();
+
+		if ($turma > 0) {
         	Session::flash('delet', 'Bimestre já cadastrado, não é permitido a exclusão !!!');
-        	return Redirect::route('bimestres_r.index');
-		} else {
+		} 
+		else {
 			Bimestre::destroy($id);
-			Session::flash('delet', 'Bimestre excluído com sucesso !!!');	
-       	}
-       	return Redirect::route('bimestres_r.index');
+			Session::flash('delet', 'Bimestre excluído com sucesso !!!');		
+		}
+		return Redirect::route('bimestres_r.index');
 	}
 }
+
+

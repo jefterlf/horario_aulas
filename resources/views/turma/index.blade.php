@@ -8,7 +8,10 @@
     <div class="col-md-10 col-md-offset-1">
           <h1>Turmas  <a class="btn btn-success" href="{!!URL::route('turmas_r.create')!!}"> Novo +</a></h1>
           @if (Session::has('message'))          
-          	<div class="alert alert-info">{{ Session::get('message') }}</div>
+          	<div class="alert alert-info" id="mensagem">{{ Session::get('message') }}</div>
+          @endif
+          @if (Session::has('delet'))
+            <div class="alert alert-danger" id="mensagem">{{ Session::get('delet') }}</div>
           @endif
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Consulta</h4></div>
@@ -65,6 +68,9 @@
             "url": "../resources/DataTables/Portuguese-Brasil.json"
         }
     } );
+  });
+  $(document).ready( function() {
+        $('#mensagem').delay(4000).fadeOut();
   });
 </script>
 

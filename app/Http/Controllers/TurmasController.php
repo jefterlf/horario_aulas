@@ -122,17 +122,13 @@ class TurmasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $horario = Horario::where('id_turma', $id)->firstOrFail();
-        if($horario->id_turma > 0){
-
-            Session::flash('xabugo', 'Impossivel Excluir!');
-            return Redirect::route('turmas_r.index');
+        $horario = Horario::where('id_turma', $id)->count();
+        if($horario > 0){
+            Session::flash('delet', 'Turma já cadastrada, não é permitido a exclusão !!!');
         }else{
             Turma::destroy($id);
+            Session::flash('delet', 'Turma excluída com sucesso !!!');
         }
-
-
 		return Redirect::route('turmas_r.index');
 	}
-
 }
