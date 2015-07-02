@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Materia;
 use App\Professor;
 use App\Horario;
+use App\Turma;
 use Validator, Input, Redirect,Response, Session;
 
 class MateriasController extends Controller {
@@ -32,8 +33,10 @@ class MateriasController extends Controller {
 	public function create()
 	{
 		$professores = Professor::lists('nome', 'id_professor');
-		$horario = Horario::lists('dia_semana','horario', 'id_turma');
-		return view('materia.create', compact('professores','horario'));
+		$horario = Horario::lists('horario','horario');
+        $horario1 = Horario::lists('dia_semana','dia_semana');
+        $horario2 = Turma::lists('serie','id_turma');
+		return view('materia.create', compact('professores','horario', 'horario1','horario2'));
 	}
 
 	/**
@@ -51,10 +54,10 @@ class MateriasController extends Controller {
     	//define os campos obrigatórios
 		$rules = array(
 			'nome_materia'       => 'required',
-			'id_horario'      => 'required',
 			'dia_semana'      => 'required',
 			'horario'      => 'required',
-			'nome'      => 'required'
+			'id_turma'      => 'required',
+			'id_professor'      => 'required'
 		);
 		  $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
 

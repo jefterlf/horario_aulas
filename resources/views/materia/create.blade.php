@@ -40,7 +40,7 @@
                 <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
                 <div class="col-md-6">
-                   <?php echo Form::select('dia_semana', $horario, null, array('class' => 'form-control'));?>
+                   <?php echo Form::select('dia_semana', $horario1, null, array('class' => 'form-control'));?>
                  </div>
                </div>
 
@@ -48,7 +48,7 @@
                    <label class="col-md-4 control-label"  for="horario">Tempo:</label>
                  <div class="col-md-6">
                   
-                     <?php echo Form::select('horario', $horario, null, array('class' => 'form-control'));?>         
+                     <?php echo Form::select('horario', $horario, null, array('class' => 'form-control'));?>
                    
                  </div>
                </div>
@@ -58,8 +58,8 @@
                <div class="form-group">
                 <label  class="col-md-4 control-label" for="id_turma">Turma:</label>
                 <div class="col-md-6">
-                   <input class="form-control" type="text" name="id_turma"> 
-                 </div>
+                    <?php echo Form::select('id_turma', $horario2, null, array('class' => 'form-control'));?>
+                </div>
                </div>
 
                <div class="form-group">
@@ -75,7 +75,7 @@
               <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                 <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-              <input type="submit" class="btn btn-primary">
+              <input type="submit" class="btn btn-primary" value="Cadastrar">
           </div>
           </div>
           </form>

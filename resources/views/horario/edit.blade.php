@@ -23,7 +23,7 @@
                <div class="form-group">
                 <label  class="col-md-4 control-label" for="horario">Horario:</label>
                 <div class="col-md-6">
-                   <input class="form-control" type="text" name="horario" value="{{ $horario->horario }}"> 
+                   <input class="form-control" type="text" name="horario" value="{{ $horario->horario }}">
                  </div>
                </div>
                <div class="form-group">
