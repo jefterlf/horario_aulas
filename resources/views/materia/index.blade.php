@@ -27,9 +27,9 @@
      <thead>         
             <tr>
                 <th>Nome da Matéria</th>
+                <th>Dia da Semana</th>
                 <th>Tempo</th>
-                <th>Dia da semana</th>
-                <th>Horario</th>
+                <th>Turma</th>
                 <th>Professor</th>
                 <th>Ações</th>
             </tr>
@@ -42,13 +42,13 @@
                       <?php echo $materia->nome_materia ?>
                     </td>
                     <td>
-                      <?php echo $materia->id_horario ?>
-                    </td>
-                    <td>
                       <?php echo $materia->dia_semana ?>
                     </td>
                     <td>
                       <?php echo $materia->horario ?>
+                    </td>
+                    <td>
+                      <?php echo $materia->id_turma ?>
                     </td>
                     <td>
                       <?php echo $materia->professor->nome ?>

@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Cadastro</div>
         <div class="panel-body">
-
+ {!! Form::model($horario, array('route' => array('horarios_r.create', $horario->dia_semana .','.$horario->horario . ',' . $horario->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
             <form class="form-horizontal" role="form" action="{!!URL::route('materias_r.store')!!}" method="post">
 
               <div class="form-group">
@@ -36,31 +36,34 @@
                     </div>
                 </div>
 
+
+                <div class="form-group">
+                <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
+                <div class="col-md-6">
+                   <?php echo Form::select('dia_semana', $horario, null, array('class' => 'form-control'));?>
+                 </div>
+               </div>
+
               <div class="form-group">
-                   <label class="col-md-4 control-label"  for="bimestre">Tempo:</label>
+                   <label class="col-md-4 control-label"  for="horario">Tempo:</label>
                  <div class="col-md-6">
                   
-                     <?php echo Form::select('id_horario', $horario, null, array('class' => 'form-control'));?>         
+                     <?php echo Form::select('horario', $horario, null, array('class' => 'form-control'));?>         
                    
                  </div>
                </div>
 
-              <div class="form-group">
-                <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
+              
+
+               <div class="form-group">
+                <label  class="col-md-4 control-label" for="id_turma">Turma:</label>
                 <div class="col-md-6">
-                   <input class="form-control" type="text" name="dia_semana"> 
+                   <input class="form-control" type="text" name="id_turma"> 
                  </div>
                </div>
 
                <div class="form-group">
-                <label  class="col-md-4 control-label" for="horario">Horario:</label>
-                <div class="col-md-6">
-                   <input class="form-control" type="text" name="horario"> 
-                 </div>
-               </div>
-
-               <div class="form-group">
-                   <label class="col-md-4 control-label"  for="bimestre">Professor:</label>
+                   <label class="col-md-4 control-label"  for="id_professor">Professor:</label>
                  <div class="col-md-6">
                   
                      <?php  echo Form::select('id_professor', $professores, null, array('class' => 'form-control'));?>         
