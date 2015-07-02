@@ -20,7 +20,6 @@
           <h4>Cadastro</h4>  
         </div>
         <div class="panel-body">
-
             <form class="form-horizontal" role="form" action="{!!URL::route('bimestres_r.store')!!}" method="post">
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="bimestre">Bimestre:</label>

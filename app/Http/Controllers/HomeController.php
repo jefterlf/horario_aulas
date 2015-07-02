@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use App\Turma;
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +30,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$turma = Turma::lists('serie', 'id_turma');
+		return view('home')->with(compact('turma'));
+	}
+	public function show($id)
+	{
+		$turma = Turma::find($id);
+		return View('turma.show')->with('turma', $turma);
 	}
 
 }
