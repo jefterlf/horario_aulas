@@ -21,9 +21,7 @@ class CreateMateriasTable extends Migration {
 			$table->string('horario',255);
 			$table->integer('id_turma');
 			$table->integer('id_professor')->unsigned();
-			$table->foreign('dia_semana')->references('dia_semana')->on('horarios');
-			$table->foreign('horario')->references('horario')->on('horarios');
-			$table->foreign('id_turma')->references('id_turma')->on('horarios');
+			$table->foreign('dia_semana','horario','id_turma')->references('dia_semana','horario','id_turma')->on('horarios');
 			$table->foreign('id_professor')->references('id_professor')->on('professors');
 			$table->timestamps();
 
