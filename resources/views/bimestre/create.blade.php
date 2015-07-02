@@ -24,7 +24,12 @@
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="bimestre">Bimestre:</label>
                 <div class="col-md-3">
-                   <input class="form-control" type="text" name="bimestre">
+                  <select class="form-control" id="bimestre" name="bimestre">
+                    <option value="1º Bimestre">1º Bimestre</option>
+                    <option value="2º Bimestre">2º Bimestre</option>
+                    <option value="3º Bimestre">3º Bimestre</option>
+                    <option value="4º Bimestre">4º Bimestre</option>
+                  </select>
                  </div>
                </div>
           
