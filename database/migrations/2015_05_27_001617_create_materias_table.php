@@ -17,12 +17,13 @@ class CreateMateriasTable extends Migration {
 
 			$table->increments('id_materia');
 			$table->string('nome_materia',255);
-			$table->integer('id_horario')->unsigned();
             $table->string('dia_semana',255);
 			$table->string('horario',255);
+			$table->integer('id_turma');
 			$table->integer('id_professor')->unsigned();
-
-			$table->foreign('id_horario')->references('id_horario')->on('horarios');
+			$table->foreign('dia_semana')->references('dia_semana')->on('horarios');
+			$table->foreign('horario')->references('horario')->on('horarios');
+			$table->foreign('id_turma')->references('id_turma')->on('horarios');
 			$table->foreign('id_professor')->references('id_professor')->on('professors');
 			$table->timestamps();
 
