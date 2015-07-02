@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Cadastro</div>
         <div class="panel-body">
- {!! Form::model($horario, array('route' => array('horarios_r.create', $horario->dia_semana .','.$horario->horario . ',' . $horario->id_turma), 'class'=>'form-horizontal', 'method' => 'PUT')) !!}
+
             <form class="form-horizontal" role="form" action="{!!URL::route('materias_r.store')!!}" method="post">
 
               <div class="form-group">

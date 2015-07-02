@@ -29,11 +29,10 @@ class MateriasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create($model)
+	public function create()
 	{
-		$value = explode(",",$model);
-		$horario = Horario::where('dia_semana',$value[0])->where('horario',$value[1])->where('id_turma',$value[2]);
 		$professores = Professor::lists('nome', 'id_professor');
+		$horario = Horario::lists('dia_semana','horario', 'id_turma');
 		return view('materia.create', compact('professores','horario'));
 	}
 
