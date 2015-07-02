@@ -20,16 +20,7 @@
               		</tr>
        						</thead>
               </form>
-          </table>
-          <div class="row">
-						<div class="col-md-8 col-md-offset-10">  
-          	   <tbody>
-       					  <td>
-                    <a class="btn btn-danger btn-sm" href="">Gerar PDF</a>
-                  </td>
-        			 </tbody>
-        		</div>
-        	</div>  	
+          </table>	
         </div>
       </div>
     </div>

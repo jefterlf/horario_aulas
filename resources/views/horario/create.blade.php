@@ -57,7 +57,7 @@
               
               <div class="form-group">
                   <label class="col-md-4 control-label"  for="horario">Série:</label>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                     <?php echo Form::select('id_turma', $turmas, null, array('class' => 'form-control'));?>
                     </div>
               </div>
@@ -66,7 +66,7 @@
               <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                 <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-              <input type="submit" class="btn btn-primary">
+              <input type="submit" class="btn btn-primary" value="Cadastrar">
           </div>
           </div>
           </form>
