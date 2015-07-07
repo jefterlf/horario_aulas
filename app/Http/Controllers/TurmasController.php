@@ -58,19 +58,23 @@ class TurmasController extends Controller {
 		);
 		  $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
 
+		  $turma = Turma::where('serie',$request->serie)->count();
 
-		//se ouver erros na validação retorna para a view crete
-		if ($validator->fails()) {
-			   return redirect()->back()->withErrors($validator->errors());
-		} else {
-			//se os campos forem validos salva no banco
+
+		  if($turma > 0){
+            Session::flash('message', 'Essa Turma ja foi cadastrado anteriormente, por favor tente novamente!');
+            return Redirect::route('turmas_r.create');
+        }elseif ($validator->fails()) {
+               return redirect()->back()->withErrors($validator->errors());
+        }else{
+
+            //se os campos forem validos salva no banco
 			$turma = Turma::create($request->all());
 			// salva a mensagem na sessin para ser exibida na index
-			Session::flash('message', 'Turmas Cadastrado com sucesso!');
-		}
-		return Redirect::route('turmas_r.index');
-	}
-
+			Session::flash('message', 'Turma '.$request->serie.' Cadastrado com sucesso!');
+        }
+       return Redirect::route('turmas_r.index');     
+    }
 	/**
 	 * Display the specified resource.
 	 *

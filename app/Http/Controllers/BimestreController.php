@@ -9,15 +9,9 @@ use Validator, Input, Redirect,Response, Session;
 
 class BimestreController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-
 	public function __construct() { 
 		$this->middleware('auth'); 
-	} //Se o usuário não estiver logado, redireciona para a página de login
+	} 
 
 	public function index()
 	{
@@ -25,82 +19,57 @@ class BimestreController extends Controller {
 		return view('bimestre.index', compact('bimestres'));
 	}
 
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
+	
 	public function create()
 	{
 		$bimestres = Bimestre::lists('bimestre','data_inicio','data_final');
 		return view('bimestre.create', compact('bimestres'));
 
 	}
+	
+	public function store(Request $request){
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store(Request $request)
-{
-	$bimestre = Bimestre::where('bimestre',$request->bimestre)->where('data_inicio',$request->data_inicio)->count();
-
-	if ($bimestre > 0) {
-        	Session::flash('message','Este Bimestre já está cadastrado !!!');
-        	return Redirect::route('bimestres_r.index');
-		} 
-		else {
-					
-		
+	
 		$messages = [
-    		'required' => 'O :attribute é obrigatorio', //Mensagem de erro caso tenha algum
+    		'required' => 'O :attribute é obrigatorio', 
 		];
 
-		//define os campos obrigatórios
+		
 		$rules = array(
 			'bimestre'       => 'required',
 			'data_inicio'    => 'required',
 			'data_final'     => 'required',
 		);
-		$validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+		$validator = Validator::make($request->all(), $rules, $messages); 
 
-		//se ouver erros na validação retorna para a view crete
-		if ($validator->fails()) {
-			   return redirect()->back()->withErrors($validator->errors());
-		} else {
-			//se os campos forem válidos salva no banco
-			$bimestre = Bimestre::create(Input::all());
-			// salva a mensagem na sessin para ser exibida na index
-			Session::flash('message', $request->bimestre.' cadastrado com sucesso !');
+
+		$bimestre = Bimestre::where('bimestre',$request->bimestre)->count();
+	
+
+		if ($bimestre > 0) {
+        	Session::flash('message','Este Bimestre já está cadastrado !!!');
+        	return Redirect::route('bimestres_r.create');
+		}elseif ($validator->fails()) {
+               return redirect()->back()->withErrors($validator->errors());
+		}else{
+
+            $bimestre = Bimestre::create(Input::all());			
+			Session::flash('message', $request->bimestre.' cadastrado com sucesso !');					
+	
 		}
-		return Redirect::route('bimestres_r.index');
-
-		
-
-		 }
+		return Redirect::route('bimestres_r.index');		
+		 
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 	public function show($id)
 	{
-		$bimestres = Bimestre::where('id_bimestre', $id)->firstOrFail();//Faz a consulta para carregar o formulário com  a turma a ser alterada
-		return View('bimestre.delete')->with('bimestre', $bimestres)->with(compact('bimestres'));//retorna $urma e $bimestres para a view
+		$bimestres = Bimestre::where('id_bimestre', $id)->firstOrFail();
+		return View('bimestre.delete')->with('bimestre', $bimestres)->with(compact('bimestres'));
 	
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 	public function edit($id)
 	{
         $bimestres = Bimestre::where('id_bimestre', $id)->firstOrFail();
@@ -108,28 +77,23 @@ class BimestreController extends Controller {
 
     }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 	public function update($id, Request $request)
 	{
 		 $messages = [
-            'required' => 'O campo :attribute é obrigatório', //Mensagem de erro caso tenha algum
+            'required' => 'O campo :attribute é obrigatório', 
         ];
 
-        //define os campos obrigatórios
+        
         $rules = array(
             'bimestre'       => 'required',
 			'data_inicio'    => 'required',
 			'data_final'     => 'required',                
         );
-        $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+        $validator = Validator::make($request->all(), $rules, $messages); 
 
 
-        //se ouver erros na validação retorna para a view crete
+        
         if ($validator->fails()) {
                return redirect()->back()->withErrors($validator->errors());
         } else {
@@ -144,12 +108,7 @@ class BimestreController extends Controller {
         return Redirect::route('bimestres_r.index');
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 
 	public function destroy($id)
 	{

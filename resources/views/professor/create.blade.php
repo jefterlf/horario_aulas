@@ -15,6 +15,9 @@
               </ul>
             </div>
           @endif
+           @if (Session::has('message'))
+        <div class="alert alert-danger" id="sumir" >{{ Session::get('message') }}</div>
+        @endif
       <div class="panel panel-default">
         <div class="panel-heading">Cadastro
           
@@ -67,8 +70,13 @@
 </div>
 <nav>
   <ul class="pager">
-    <li onclick="window.history.back();" ><a href="" >Voltar</a></li>
+    <li ><a href="{!!URL::route('professors_r.index')!!}" >Voltar</a></li>
   </ul>
 </nav>
 </div>
+<script>
+$(document).ready( function() {
+        $('#sumir').delay(3000).fadeOut();
+      });
+</script>
 @endsection

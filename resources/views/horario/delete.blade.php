@@ -64,7 +64,7 @@
 </div>
 <nav>
   <ul class="pager">
-    <li onclick="window.history.back();" ><a href="" >Voltar</a></li>
+    <li ><a href="{!!URL::route('horarios_r.index')!!}" >Voltar</a></li>
   </ul>
 </nav>
 </div>.

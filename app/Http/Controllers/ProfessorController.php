@@ -39,34 +39,36 @@ class ProfessorController extends Controller {
 	 */
     public function store(Request $request)
     {
-        
         $messages = [
-            'required' => 'O campo :attribute é obrigatório', //Mensagem de erro caso tenha algum
+            'required' => 'O campo :attribute é obrigatório', 
         ];
 
-        //define os campos obrigatórios
         $rules = array(
             'nome'       => 'required',
             'data_admissao'      => 'required',                
         );
-          $validator = Validator::make($request->all(), $rules, $messages); //Executa a validação, passando os campos a serem validados e a mensagem de erro
+        $validator = Validator::make($request->all(), $rules, $messages);
 
 
-        //se ouver erros na validação retorna para a view crete
-        if ($validator->fails()) {
+
+        $professor = Professor::where('nome',$request->nome)->where('tipo', $request->tipo)->count();
+
+
+        if($professor > 0){
+            Session::flash('message', 'Esse Professor ja foi cadastrado anteriormente, por favor tente novamente!');
+            return Redirect::route('professors_r.create');
+        }elseif ($validator->fails()) {
                return redirect()->back()->withErrors($validator->errors());
-        } else {
-        $professor = Professor::create(Input::all());
+        }else{
 
-        Session::flash('message', 'Professor(a) '.$request->nome.' Cadastrado com sucesso!');
-        
-    }return Redirect::route('professors_r.index');}
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+            $professor = Professor::create($request->all());
+            Session::flash('message', 'Professor(a) '.$request->nome.' Cadastrado com sucesso!');
+
+        }
+        return Redirect::route('professors_r.index');
+     
+    }
+
 	public function show($id)
 	{
         
