@@ -31,10 +31,20 @@ class MateriasController extends Controller {
 
 	public function store(Request $request)
 	{
+    $materia = Materia::where('nome_materia',$request->nome_materia)->where('dia_semana', $request->dia_semana)->where('horario', $request->horario)->where('id_turma', $request->id_turma)->where('id_professor', $request->id_professor)->count();
 
-			$materia = Materia::create($request->all());
+
+        if($materia > 0){
+            Session::flash('message', 'Essa matéria ja foi cadastrada anteriormente, por favor tente novamente!');
+            return Redirect::route('materias_r.create');
+        }else{
+            $materia = Materia::create($request->all());
             Session::flash('message', 'Matéria Cadastrada com sucesso!');
-            return Redirect::route('materias_r.index');
+
+        }
+        return Redirect::route('materias_r.index');
+
+
 	}
 
 	public function show($id)

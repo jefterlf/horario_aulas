@@ -69,19 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MateriasController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MateriasController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MateriasController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1411">
-              <folding />
+            <state line="33" column="187" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.51039696" vertical-offset="291" max-vertical-offset="1700">
+              <folding>
+                <element signature="e#39#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/materia/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="51" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.32136106" vertical-offset="901" max-vertical-offset="1751">
+            <state line="11" column="14" selection-start="281" selection-end="412" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -108,7 +110,7 @@
       <file leaf-file-name="create.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/materia/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="2698" selection-end="2698" vertical-scroll-proportion="-19.538462" vertical-offset="563" max-vertical-offset="1666">
+            <state line="68" column="68" selection-start="2946" selection-end="2946" vertical-scroll-proportion="-11.115385" vertical-offset="867" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -141,12 +143,12 @@
         <option value="$PROJECT_DIR$/resources/views/turma/delete.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/professor/delete.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/horario/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/materia/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/materia/delete.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TurmasController.php" />
         <option value="$PROJECT_DIR$/resources/views/materia/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MateriasController.php" />
         <option value="$PROJECT_DIR$/resources/views/materia/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/materia/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MateriasController.php" />
       </list>
     </option>
   </component>
@@ -675,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/materia/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="2698" selection-end="2698" vertical-scroll-proportion="-19.538462" vertical-offset="563" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/professor/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="42" selection-start="481" selection-end="487" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="1411">
@@ -717,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MateriasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/professor/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="1535" selection-end="1535" vertical-scroll-proportion="-0.65384614" vertical-offset="935" max-vertical-offset="1802">
@@ -733,8 +721,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/materia/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="51" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.32136106" vertical-offset="901" max-vertical-offset="1751">
+        <state line="11" column="14" selection-start="281" selection-end="412" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1751">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/materia/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="68" selection-start="2946" selection-end="2946" vertical-scroll-proportion="-11.115385" vertical-offset="867" max-vertical-offset="1717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MateriasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="187" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.51039696" vertical-offset="291" max-vertical-offset="1700">
+          <folding>
+            <element signature="e#39#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
