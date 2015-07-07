@@ -7,6 +7,12 @@
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
         <h1>Matérias <a class="btn btn-success" href="{!!URL::route('materias_r.create')!!}">  Novo +</a></h1>
+        @if (Session::has('message'))
+        <div class="alert alert-info" id="sumir" >{{ Session::get('message') }}</div>
+        @endif
+        @if (Session::has('delet'))
+        <div class="alert alert-danger" id="sumir" >{{ Session::get('delet') }}</div>
+        @endif
         <div class="panel text-right">
     
          </div>
@@ -54,7 +60,7 @@
                       <?php echo $materia->professor->nome ?>
                     </td>
                     <td>
-                      <a class="btn btn-primary" href="{{URL::to('materias_r/'. $materia->id_materia . '/edit')}}">Editar</a>
+                      <a class="btn btn-primary btn-sm" href="{{URL::to('materias_r/'. $materia->id_materia . '/edit')}}">Editar</a>
                       <a class="btn btn-danger btn-sm" href="{{URL::to('materias_r/'. $materia->id_materia)}}">Deletar</a>
                     </td>
                   </tr>
@@ -82,6 +88,10 @@
             "url": "../resources/DataTables/Portuguese-Brasil.json"
         }
     } );
+  });
+
+  $(document).ready( function() {
+      $('#sumir').delay(3000).fadeOut();
   });
   </script>
 

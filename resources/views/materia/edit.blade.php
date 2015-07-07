@@ -43,7 +43,7 @@
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
                 <div class="col-md-6">
-                   <input class="form-control" type="text" name="dia_semana" value="{{ $materia->dia_semana }}"> 
+                    <?php echo Form::select('dia_semana', array('0' => 'Selecione') + $dia_semana, $materia->dia_semana, array('class' => 'form-control'));?>
                  </div>
                </div>
 

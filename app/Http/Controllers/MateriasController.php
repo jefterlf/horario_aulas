@@ -31,9 +31,10 @@ class MateriasController extends Controller {
 
 	public function store(Request $request)
 	{
+
 			$materia = Materia::create($request->all());
-			Session::flash('message', 'Materia Cadastrado com sucesso!');
-		    return Redirect::route('materias_r.index');
+            Session::flash('message', 'Matéria Cadastrada com sucesso!');
+            return Redirect::route('materias_r.index');
 	}
 
 	public function show($id)
@@ -41,8 +42,9 @@ class MateriasController extends Controller {
 		$materia = Materia::where('id_materia', $id)->firstOrFail();
 		$professores = Professor::lists('nome', 'id_professor');
         $turma = Turma::lists('serie', 'id_turma');
+        $dia_semana = Horario::lists('dia_semana', 'dia_semana');
 		$horario = Horario::lists('horario', 'horario');
-		return View('materia.delete')->with('materia', $materia)->with(compact('professores','horario','turma'));
+		return View('materia.delete')->with('materia', $materia)->with(compact('professores','horario','turma', 'dia_semana'));
 	}
 
 	public function edit($id)
@@ -50,8 +52,9 @@ class MateriasController extends Controller {
 		$materia = Materia::where('id_materia', $id)->firstOrFail();
 		$professores = Professor::lists('nome','id_professor');
         $turma = Turma::lists('serie','id_turma');
+        $dia_semana = Horario::lists('dia_semana', 'dia_semana');
 		$horario = Horario::lists('horario','horario');
-		return View('materia.edit')->with('materia', $materia)->with(compact('professores','horario','turma'));
+		return View('materia.edit')->with('materia', $materia)->with(compact('professores','horario','turma', 'dia_semana'));
 	}
 
 	public function update($id)
