@@ -35,6 +35,7 @@ class BimestreController extends Controller {
 	{
 		$bimestres = Bimestre::lists('bimestre','data_inicio','data_final');
 		return view('bimestre.create', compact('bimestres'));
+
 	}
 
 	/**
@@ -43,7 +44,16 @@ class BimestreController extends Controller {
 	 * @return Response
 	 */
 	public function store(Request $request)
-	{
+{
+	$bimestre = Bimestre::where('bimestre',$request->bimestre)->where('data_inicio',$request->data_inicio)->count();
+
+	if ($bimestre > 0) {
+        	Session::flash('message','Este Bimestre já está cadastrado !!!');
+        	return Redirect::route('bimestres_r.index');
+		} 
+		else {
+					
+		
 		$messages = [
     		'required' => 'O :attribute é obrigatorio', //Mensagem de erro caso tenha algum
 		];
@@ -66,7 +76,11 @@ class BimestreController extends Controller {
 			Session::flash('message', $request->bimestre.' cadastrado com sucesso !');
 		}
 		return Redirect::route('bimestres_r.index');
-	}  
+
+		
+
+		 }
+	}
 
 	/**
 	 * Display the specified resource.
