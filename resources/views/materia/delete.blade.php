@@ -39,15 +39,6 @@
                </div>
 
               <div class="form-group">
-                   <label class="col-md-4 control-label"  for="id_horario">Horario:</label>
-                 <div class="col-md-6">
-                  
-                    <input class="form-control" type="text" name="horario" value="{{ $materia->id_horario }}"> 
-                   
-                 </div>
-               </div>
-
-              <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
                 <div class="col-md-6">
                    <input class="form-control" type="text" name="dia_semana" value="{{ $materia->dia_semana }}"> 
@@ -55,11 +46,18 @@
                </div>
 
                <div class="form-group">
-                <label  class="col-md-4 control-label" for="horario">Horario:</label>
-                <div class="col-md-6">
-                   <input class="form-control" type="text" name="horario" value="{{ $materia->horario }}"> 
-                 </div>
-               </div>
+                         <label  class="col-md-4 control-label" for="horario">Tempo:</label>
+                         <div class="col-md-6">
+                             <input class="form-control" type="text" name="horario" value="{{ $materia->horario }}">
+                         </div>
+                     </div>
+
+                     <div class="form-group">
+                         <label  class="col-md-4 control-label" for="turma">Turma:</label>
+                         <div class="col-md-6">
+                             <input class="form-control" type="text" name="turma" value="{{ $materia->id_turma }}">
+                         </div>
+                     </div>
 
                <div class="form-group">
                    <label class="col-md-4 control-label"  for="bimestre">Professor:</label>

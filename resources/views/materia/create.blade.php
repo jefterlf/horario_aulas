@@ -40,7 +40,7 @@
                 <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
                 <div class="col-md-6">
-                   <?php echo Form::select('dia_semana', $horario1, null, array('class' => 'form-control'));?>
+                   <?php echo Form::select('dia_semana', $dia_semana, null, array('class' => 'form-control'));?>
                  </div>
                </div>
 
@@ -58,7 +58,7 @@
                <div class="form-group">
                 <label  class="col-md-4 control-label" for="id_turma">Turma:</label>
                 <div class="col-md-6">
-                    <?php echo Form::select('id_turma', $horario2, null, array('class' => 'form-control'));?>
+                    <?php echo Form::select('id_turma', $turma, null, array('class' => 'form-control'));?>
                 </div>
                </div>
 

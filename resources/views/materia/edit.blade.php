@@ -39,14 +39,6 @@
                     </div>
                 </div>
 
-               <div class="form-group">
-                   <label class="col-md-4 control-label"  for="id_horario">Horario:</label>
-                 <div class="col-md-6">
-                  
-                    <?php echo Form::select('id_horario', array('0' => 'Selecione') + $horarios, $materia->id_horario, array('class' => 'form-control'));?> 
-                   
-                 </div>
-               </div>
 
               <div class="form-group">
                 <label  class="col-md-4 control-label" for="dia_semana">Dia da Semana:</label>
@@ -56,11 +48,18 @@
                </div>
 
                <div class="form-group">
-                <label  class="col-md-4 control-label" for="horario">Horario:</label>
+                <label  class="col-md-4 control-label" for="horario">Tempo:</label>
                 <div class="col-md-6">
                    <input class="form-control" type="text" name="horario" value="{{ $materia->horario }}"> 
                  </div>
                </div>
+
+            <div class="form-group">
+                <label  class="col-md-4 control-label" for="id_turma">Turma:</label>
+                <div class="col-md-6">
+                    <?php echo Form::select('id_turma', array('0' => 'Selecione') + $turma, $materia->id_turma, array('class' => 'form-control'));?>
+                </div>
+            </div>
 
                <div class="form-group">
                    <label class="col-md-4 control-label"  for="bimestre">Professor:</label>

@@ -123,6 +123,7 @@ class TurmasController extends Controller {
 	public function destroy($id)
 	{
         $horario = Horario::where('id_turma', $id)->count();
+
         if($horario > 0){
             Session::flash('delet', 'Turma já cadastrada, não é permitido a exclusão !!!');
         }else{
