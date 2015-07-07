@@ -48,7 +48,7 @@
                       <?php echo $materia->horario ?>
                     </td>
                     <td>
-                      <?php echo $materia->id_turma ?>
+                      <?php echo $materia->turma->serie ?>
                     </td>
                     <td>
                       <?php echo $materia->professor->nome ?>

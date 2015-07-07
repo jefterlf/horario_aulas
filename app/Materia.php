@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materia extends Model {
 
-	protected $fillable = ['nome_materia','id_horario','dia_semana','horario','id_professor'];
+	protected $fillable = ['nome_materia','dia_semana','horario','id_turma','id_professor'];
 	protected $guarded = ['created_at','updated_at'];
 	protected $primaryKey = "id_materia";
 
@@ -16,4 +16,7 @@ class Materia extends Model {
 			return $this->hasOne('App\Horario', 'dia_semana', 'dia_semana');		
 }
 
+	public function turma(){
+			return $this->hasOne('App\Turma', 'id_turma', 'id_turma');
+		}
 }
