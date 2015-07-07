@@ -50,7 +50,7 @@
                <div class="form-group">
                 <label  class="col-md-4 control-label" for="horario">Tempo:</label>
                 <div class="col-md-6">
-                   <input class="form-control" type="text" name="horario" value="{{ $materia->horario }}"> 
+                    <?php echo Form::select('horario', array('0' => 'Selecione') + $horario, $materia->horario, array('class' => 'form-control'));?>
                  </div>
                </div>
 
