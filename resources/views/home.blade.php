@@ -13,13 +13,15 @@
           
 
 
-          <form class="form-horizontal" role="form" action="{!!URL::route('homes_r.show')!!}" method="post">
+          <form class="form-horizontal" role="form" action="{!!URL::route('homes_r.store')!!}" method="post">
             <div class="form-group">
 
-              <label class="col-md-4 control-label" for="id_turma" >HORÁRIO :</label>
+              <label class="col-md-4 control-label" for="id_turma" >Turma :</label>
                 <div class="col-md-3">
                   <?php echo Form::select('id_turma', $turma, null, array('class' => 'form-control'));?>     
                 </div>
+
+              <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                   <input type="submit" class="btn btn-primary" value="Consultar">
            
             </div>                          
@@ -34,19 +36,23 @@
               </thead>
               <tbody>
                 <?php
-                  foreach($horarios as $horario) {
+                if(isset($horario)){
+              
+            
+                  foreach($horario as $horarios) {
+
                 ?>
                   <tr>
                     <td>
-                      <?php echo $horario->dia_semana; ?>
+                      <?php echo $horarios->dia_semana; ?>
                     </td>
 
                     <td>
-                      <?php echo $horario->horario; ?>
+                      <?php echo $horarios->horario; ?>
                     </td>
 
                     <td>
-                      <?php echo $horario->id_turma; ?>
+                      <?php echo $horarios->id_turma; ?>
                     </td>
 
                     <td>
@@ -54,7 +60,7 @@
                     </td>  
                   </tr> 
               <?php
-                  }
+               }   }
               ?> 
               </tbody>
           </table>
