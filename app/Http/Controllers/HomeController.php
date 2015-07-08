@@ -1,5 +1,13 @@
 <?php namespace App\Http\Controllers;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Turma;
+use App\Horario;
+use App\Bimestre;
+use App\Professor;
+use App\Materia;
+use Validator, Input, Redirect,Response, Session;
 class HomeController extends Controller {
 
 	/*
@@ -33,10 +41,13 @@ class HomeController extends Controller {
 		$turma = Turma::lists('serie', 'id_turma');
 		return view('home')->with(compact('turma'));
 	}
+
+
 	public function show($id)
 	{
-		$turma = Turma::find($id);
-		return View('turma.show')->with('turma', $turma);
+		 
+		$horario = Horario::where('id_turma', $id);
+			return view('home')->with(compact('horario'));
 	}
 
 }
