@@ -23,15 +23,20 @@
             </div>                          
           </form>
           <div class="row">  
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-6 col-md-offset-1">
               <div class="panel panel-default">
+                <div class="panel-heading">Turma: 1º Ano A</div>
                   <div class="panel-body">
-                    <table id="tbRelatorio" class="table table-striped table-bordered cellspacing" width="100%">
+                    
+                    <table class="table" width="100%">
                       <thead>
                         <tr>
-                          <th>Dia da Semana</th>
-                          <th>Série</th>
-                          <th>Turma</th>
+                          <th>Tempo</th>
+                          <th>Segunda-feira</th>
+                          <th>Terça-feira</th>
+                          <th>Quarta-feira</th>
+                          <th>Quinta-feira</th>
+                          <th>Sexta-feira</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -41,13 +46,22 @@
                       ?>
                       <tr>
                         <td>
-                          <?php echo $horarios->dia_semana; ?>
+                          <?php //echo $horarios->dia_semana; ?>
                         </td>
                         <td>
-                          <?php echo $horarios->horario; ?>
+                          <?php //echo $horarios->materia->nome_materia; ?>
                         </td>
                         <td>
-                          <?php echo $horarios->id_turma; ?>
+                          <?php //echo $horarios->materia->nome_materia; ?>
+                        </td>  
+                        <td>
+                          <?php //echo $horarios->materia->nome_materia; ?>
+                        </td>  
+                        <td>
+                          <?php //echo $horarios->materia->nome_materia; ?>
+                        </td>  
+                        <td>
+                          <?php //echo $horarios->materia->nome_materia; ?>
                         </td>  
                       </tr> 
                       <?php
