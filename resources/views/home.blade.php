@@ -25,7 +25,7 @@
           <div class="row">  
             <div class="col-md-6 col-md-offset-1">
               <div class="panel panel-default">
-                <div class="panel-heading">Turma: 1º Ano A</div>
+                <div class="panel-heading">Turma: <?php echo $consulta->turma->serie; ?></div>
                   <div class="panel-body">
                     
                     <table class="table" width="100%">
@@ -46,7 +46,7 @@
                       ?>
                       <tr>
                         <td>
-                          <?php //echo $horarios->dia_semana; ?>
+                          <?php //echo $horarios->id_turma; ?>
                         </td>
                         <td>
                           <?php //echo $horarios->materia->nome_materia; ?>

@@ -46,9 +46,9 @@ class HomeController extends Controller {
 	public function store(Request $request)
 	{
 		$turma = Turma::lists('serie', 'id_turma');
-		 
+		$consulta = Turma::where('id_turma', $request->id_turma)->first();		 
 		$horario = Horario::where('id_turma', $request->id_turma)->get();
-			return view('home')->with('horario', $horario)->with(compact('turma'));
+	    return view('home')->with('horario', $horario)->with(compact('turma', 'consulta'));
 	}
 
 }
