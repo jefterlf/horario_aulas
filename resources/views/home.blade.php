@@ -27,7 +27,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">Turma: <?php
                   if(isset($consulta)){
-                 echo $consulta->turma->serie; }?></div>
+                 echo $consulta->serie; }?></div>
                   <div class="panel-body">
                     
                     <table class="table" width="100%">
