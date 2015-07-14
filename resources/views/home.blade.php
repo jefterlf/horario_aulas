@@ -23,9 +23,11 @@
             </div>                          
           </form>
           <div class="row">  
-            <div class="col-md-6 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-1">
               <div class="panel panel-default">
-                <div class="panel-heading">Turma: <?php echo $consulta->turma->serie; ?></div>
+                <div class="panel-heading">Turma: <?php
+                  if(isset($consulta)){
+                 echo $consulta->turma->serie; }?></div>
                   <div class="panel-body">
                     
                     <table class="table" width="100%">
