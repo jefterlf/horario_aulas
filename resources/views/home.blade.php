@@ -13,23 +13,30 @@
           <form class="form-horizontal" role="form" action="{!!URL::route('homes_r.store')!!}" method="post">
             <div class="form-group">
               <label class="col-md-4 control-label" for="id_turma">
-                TURMA :
+                <strong>
+                  TURMA :
+                </strong>
               </label>
                 <div class="col-md-2">
                   <?php echo Form::select('id_turma', $turma, null, array('class' => 'form-control'));?>     
                 </div>
-              <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                  <input type="submit" class="btn btn-primary" value="Consultar">
+                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}"/>
+                <input type="submit" class="btn btn-primary" value="Consultar"/>
             </div>                          
           </form>
           <div class="row">  
             <div class="col-md-8 col-md-offset-1">
               <div class="panel panel-default">
-                <div class="panel-heading">Turma: <?php
-                  if(isset($consulta)){
-                 echo $consulta->serie; }?></div>
+                <div class="panel-heading">
+                  <strong>
+                    <?php
+                      if (isset($consulta)) {
+                        echo $consulta->serie; 
+                      }
+                    ?> :
+                </div>
+                  </strong>
                   <div class="panel-body">
-                    
                     <table class="table" width="100%">
                       <thead>
                         <tr>
@@ -51,7 +58,11 @@
                           <?php //echo $horarios->id_turma; ?>
                         </td>
                         <td>
-                          <?php echo $horarios->materia->nome_materia; ?>
+                          <strong>
+                            <?php 
+                              echo $horarios->materia->nome_materia;
+                            ?>
+                          </strong>
                         </td>
                         <td>
                           <?php //echo $horarios->materia->nome_materia; ?>
