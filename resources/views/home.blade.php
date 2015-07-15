@@ -51,7 +51,7 @@
                           <?php //echo $horarios->id_turma; ?>
                         </td>
                         <td>
-                          <?php //echo $horarios->materia->nome_materia; ?>
+                          <?php echo $horarios->materia->nome_materia; ?>
                         </td>
                         <td>
                           <?php //echo $horarios->materia->nome_materia; ?>
