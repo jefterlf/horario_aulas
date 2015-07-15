@@ -7,7 +7,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" align="center">
           <h3>E.E. Amélio de Carvalho Baís</h3>
-          <h4>Relatório de Professores (Individual)</h4>
+          <h4>Relatório de Turmas</h4>
         </div>        
         <div class="panel-body">
           <form class="form-horizontal" role="form" action="{!!URL::route('homes_r.store')!!}" method="post">
