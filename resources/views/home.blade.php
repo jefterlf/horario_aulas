@@ -33,7 +33,7 @@
                       if (isset($consulta)) {
                         echo $consulta->serie; 
                       }
-                    ?> :
+                    ?>
                 </div>
                   </strong>
                   <div class="panel-body">
