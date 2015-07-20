@@ -90,21 +90,24 @@
                                                 <td>
                           <strong>
                             <?php 
-                             // echo $row['materia'][3]['nome_materia'];
+                                if(isset($row['materia'][3]))
+                                  echo $row['materia'][3]['nome_materia'];
                             ?>
                           </strong>
                         </td>
                                                 <td>
                           <strong>
                             <?php 
-                          //    echo $row['materia'][4]['nome_materia'];
+                            if(isset($row['materia'][4])) 
+                              echo $row['materia'][4]['nome_materia'];
                             ?>
                           </strong>
                         </td>
                                                                       <td>
                           <strong>
                             <?php 
-                          //    echo $row['materia'][4]['nome_materia'];
+                            if(isset($row['materia'][5])) 
+                            echo $row['materia'][5]['nome_materia'];
                             ?>
                           </strong>
                         </td>
