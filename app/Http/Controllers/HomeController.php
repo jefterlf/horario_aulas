@@ -47,7 +47,7 @@ class HomeController extends Controller {
 	{
 		$turma = Turma::lists('serie', 'id_turma');
 		$consulta = Turma::where('id_turma', $request->id_turma)->first();		 
-		$horario = Horario::where('id_turma', $request->id_turma)->get();
+		$horario = Horario::where('id_turma', $request->id_turma)->groupBy('horario')->orderBy('dia_semana', 'ASC')->orderBy('horario', 'ASC')->get();
 	    return view('home')->with('horario', $horario)->with(compact('turma', 'consulta'));
 	}
 

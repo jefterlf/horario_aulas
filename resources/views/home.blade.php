@@ -25,7 +25,7 @@
             </div>                          
           </form>
           <div class="row">  
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <strong>
@@ -51,33 +51,69 @@
                       <tbody>
                       <?php
                         if(isset($horario)){
-                          foreach($horario as $horarios) {
+
+                          foreach(array_chunk($horario->all(), 1) as $horarios)    {
+              
+                 ?>
+                        
+                 <?php
+                           foreach ($horarios as $row) {
+                           //  echo $row;
                       ?>
-                      <tr>
+               <tr>
                         <td>
-                          <?php //echo $horarios->id_turma; ?>
+                          <?php echo $row['horario']; ?>
                         </td>
                         <td>
                           <strong>
                             <?php 
-                              echo $horarios->materia->nome_materia;
+                              echo $row['materia'][0]['nome_materia'];
                             ?>
                           </strong>
                         </td>
-                        <td>
-                          <?php //echo $horarios->materia->nome_materia; ?>
-                        </td>  
-                        <td>
-                          <?php //echo $horarios->materia->nome_materia; ?>
-                        </td>  
-                        <td>
-                          <?php //echo $horarios->materia->nome_materia; ?>
-                        </td>  
-                        <td>
-                          <?php //echo $horarios->materia->nome_materia; ?>
-                        </td>  
-                      </tr> 
+
+                                    <td>
+                          <strong>
+                            <?php 
+                              echo $row['materia'][1]['nome_materia'];
+                            ?>
+                          </strong>
+                        </td>
+                                                <td>
+                          <strong>
+                            <?php 
+                          if(isset($row['materia'][2]))
+                              echo $row['materia'][2]['nome_materia'];
+                            ?>
+                          </strong>
+                        </td>
+                                                <td>
+                          <strong>
+                            <?php 
+                             // echo $row['materia'][3]['nome_materia'];
+                            ?>
+                          </strong>
+                        </td>
+                                                <td>
+                          <strong>
+                            <?php 
+                          //    echo $row['materia'][4]['nome_materia'];
+                            ?>
+                          </strong>
+                        </td>
+                                                                      <td>
+                          <strong>
+                            <?php 
+                          //    echo $row['materia'][4]['nome_materia'];
+                            ?>
+                          </strong>
+                        </td>
+                                            </tr>
                       <?php
+                          }
+                          ?>
+              
+                          <?php
                         }   
                       }
                       ?> 

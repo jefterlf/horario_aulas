@@ -43,8 +43,6 @@ class MateriasController extends Controller {
 
         }
         return Redirect::route('materias_r.index');
-
-
 	}
 
 	public function show($id)

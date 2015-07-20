@@ -13,7 +13,7 @@ class Horario extends Model {
 			return $this->hasOne('App\Turma', 'id_turma', 'id_turma');
 		}
 		public function materia(){
-			return $this->hasOne('App\Materia', 'horario', 'horario');
+			return $this->hasMany('App\Materia', 'horario', 'horario');
 		}
 
 }
