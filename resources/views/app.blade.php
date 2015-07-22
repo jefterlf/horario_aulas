@@ -66,6 +66,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                     <li><a href="{!!URL::route('turmas_r.index')!!}"><span class="glyphicon glyphicon-tags"> Turmas</a></li>                    
                     <li><a href="{!!URL::route('horarios_r.index')!!}"><span class="glyphicon glyphicon-time"> Horários</a></li>             
                     <li><a href="{!!URL::route('materias_r.index')!!}"><span class="glyphicon glyphicon-book"> Matérias</a></li>
+                    <li><a href="{!!URL::route('sobre_r.index')!!}"><span class="glyphicon glyphicon-pencil"> Sobre</a></li>
+
 
             </ul>
 			<ul class="nav navbar-nav navbar-right">

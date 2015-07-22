@@ -14,7 +14,6 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -27,5 +26,8 @@ Route::resource('horarios_r','HorariosController');
 Route::resource('bimestres_r','BimestreController');
 Route::resource('usuarios_r','UsuariosController');
 Route::resource('homes_r','HomeController');
+Route::resource('sobre_r','SobreController');
+
+
 
 

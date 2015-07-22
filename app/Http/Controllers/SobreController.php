@@ -8,7 +8,7 @@ use App\Bimestre;
 use App\Professor;
 use App\Materia;
 use Validator, Input, Redirect,Response, Session;
-class HomeController extends Controller {
+class SobreController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,10 +26,7 @@ class HomeController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+
 
 	/**
 	 * Show the application dashboard to the user.
@@ -38,19 +35,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$turma = Turma::lists('serie', 'id_turma');
-		return view('home')->with(compact('turma'));
+
+		return view('sobre');
 	}
 
 
 
 
-	public function store(Request $request)
-	{
-		$turma = Turma::lists('serie', 'id_turma');
-		$consulta = Turma::where('id_turma', $request->id_turma)->first();		 
-		$horario = Horario::where('id_turma', $request->id_turma)->groupBy('horario')->orderBy('dia_semana', 'ASC')->orderBy('horario', 'ASC')->get();
-	    return view('home')->with('horario', $horario)->with(compact('turma', 'consulta'));
-	}
+
 
 }
