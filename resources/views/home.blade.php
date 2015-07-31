@@ -67,6 +67,7 @@
                         <td>
                           <strong>
                             <?php 
+                          if(isset($row['materia'][0]))
                               echo $row['materia'][0]['nome_materia'];
                             ?>
                           </strong>
@@ -75,6 +76,7 @@
                                     <td>
                           <strong>
                             <?php 
+                          if(isset($row['materia'][1]))
                               echo $row['materia'][1]['nome_materia'];
                             ?>
                           </strong>
